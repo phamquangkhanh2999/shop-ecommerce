@@ -1,0 +1,22 @@
+@import "../../styles/common.scss";
+
+.header {
+  .header-top {
+    border-bottom: 1px solid $bg-gray;
+    .header-top-hotline {
+      .header-phone {
+        text-align: left;
+        padding: 9px 0 9px;
+        font-size: 0.9rem;
+
+        i {
+          margin-right: 10px;
+        }
+        strong {
+          color: $text-quickly;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
