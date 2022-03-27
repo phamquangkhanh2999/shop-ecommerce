@@ -24,19 +24,85 @@
           display: block;
           font-size: 2rem;
         }
+
+        @include mobile {
+          font-size: 1.5rem;
+        }
       }
 
       .logo {
         cursor: pointer;
+        @include mobile {
+          text-align: center;
+          flex: 1;
+        }
       }
+      .menu-overlay {
+        position: fixed;
+        z-index: 900;
+        background-color: rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
 
+        &.active-overlay {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .navbar-mobile-active {
+        // left: 0 !important;
+        transform: unset !important;
+        transition: transform 0.3s ease-in !important;
+      }
       .navbar {
         @include tablet {
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 50%;
+          height: 100vh;
+          display: block;
+          background-color: $bg-white;
+          overflow-y: auto;
+          box-shadow: 0px 15px 15px #0000002e;
+          transform: translateX(-450px);
+          transition: transform 0.3s ease-in;
+          z-index: 999;
+        }
+
+        @include mobile {
+          width: 85%;
+        }
+        .navbar-mobile-close {
           display: none;
+
+          @include tablet {
+            text-align: center;
+            padding: 17px;
+            display: block;
+            box-shadow: 0 0 2px 0 #c3c3c3;
+            border-bottom: 1px solid #dbdbdb;
+            margin-bottom: 4px;
+            text-transform: capitalize;
+            span {
+              font-size: 1.2rem;
+              font-weight: 500;
+            }
+          }
         }
         .navbar-nav {
           display: flex;
           gap: 60px;
+
+          @include tablet {
+            gap: 20px;
+            flex-direction: column;
+          }
           .nav-item {
             display: inline-block;
 
@@ -46,11 +112,23 @@
               opacity: 1;
               visibility: visible;
             }
+            // &:hover .dropdown:after {
+            //   content: "";
+            //   position: absolute;
+            //   background-color: rgba(0, 0, 0, 0.5);
+            //   height: 100%;
+            //   width: 100%;
+            //   visibility: visible;
+            //   opacity: 1;
+            //   transition: all 0.3s ease;
+            // }
+
             &:hover .fixed-dropdown {
               transition: all 0.5s ease;
               top: 60px !important;
               padding-top: 0px !important;
             }
+
             &:hover a:after {
               content: "";
               left: -10px;
@@ -61,6 +139,25 @@
               margin-top: -3px;
               display: block;
             }
+
+            @include tablet {
+              margin: 0 !important;
+              font-size: 16px;
+              line-height: 20px;
+              border-bottom: 1px solid #dadada;
+              padding: 12px 20px;
+
+              &:hover .dropdown {
+                position: static;
+                transition: all 0.5s ease;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+              }
+              // &:hover .dropdown:after {
+              //   content: none;
+              // }
+            }
             .nav-link {
               text-transform: uppercase;
               font-weight: 500;
@@ -68,6 +165,14 @@
               color: $text-main;
               line-height: 36px;
               position: relative;
+
+              @include tablet {
+                font-size: 1.7rem;
+              }
+
+              @include mobile {
+                font-size: 1.3rem;
+              }
 
               &:hover {
                 color: $text-quickly;
@@ -81,10 +186,15 @@
       display: inline-flex;
       align-items: center;
       gap: 40px;
+
       .search-wrapper {
         padding: 10px 15px 10px;
         border-radius: 20px;
         background-color: #cfd3cb33;
+
+        @include mobile {
+          display: none;
+        }
 
         input {
           margin-left: 15px;
@@ -94,11 +204,27 @@
           font-size: 1.1rem;
         }
       }
+
+      .menu-wrap-mobile {
+        display: none;
+
+        @include mobile {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+        }
+        .icon-menu-mobile {
+          font-size: 1.5rem;
+        }
+      }
       .menu-wrap-icon {
         display: inline-flex;
         gap: 40px;
         align-items: center;
 
+        @include mobile {
+          display: none;
+        }
         .icon-menu {
           font-size: 1.5rem;
           cursor: pointer;
@@ -110,6 +236,7 @@
     }
   }
 }
+
 .fixed {
   position: fixed;
   background-color: white;
@@ -137,6 +264,11 @@
   padding-top: 56px;
   z-index: 999;
 
+  @include tablet {
+    padding: 0 20px 0;
+    transform: translateY(-100px);
+  }
+
   .dropdown-wrapper {
     background-color: $bg-white;
     .dropdown-menu {
@@ -145,6 +277,11 @@
       padding-top: 40px;
       padding-bottom: 55px;
       background-color: $bg-white;
+
+      @include tablet {
+        padding: 0;
+        flex-direction: column;
+      }
 
       .row-dropdown {
         &:nth-of-type(1) {
@@ -165,6 +302,17 @@
             color: $txt-gray;
             cursor: pointer;
 
+            @include tablet {
+              font-size: 1.5rem;
+              font-weight: 500;
+              line-height: 2.7;
+              color: $text-main;
+            }
+
+            @include mobile {
+              font-size: 1.2rem;
+            }
+
             &:hover {
               color: $text-quickly;
             }
@@ -174,7 +322,22 @@
         &:last-child {
           flex-grow: 6;
           background: center center no-repeat;
-          background-size: cover;
+          background-size: contain;
+          height: 240px;
+        }
+
+        @include tablet {
+          flex: 1;
+
+          &:last-child {
+            display: none;
+          }
+          &:nth-of-type(1) {
+            display: none;
+          }
+          .dropdown-title {
+            display: none;
+          }
         }
 
         img {
@@ -184,3 +347,5 @@
     }
   }
 }
+
+// table mobile

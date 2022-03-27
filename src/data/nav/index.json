@@ -44,56 +44,6 @@
             "link": "/"
           }
         ]
-      },
-      {
-        "title": "Quần",
-        "list": [
-          {
-            "text": "Quần Tây",
-            "link": "/"
-          },
-          {
-            "text": "Quần Jogger",
-            "link": "/"
-          },
-          {
-            "text": "Quần Khaki",
-            "link": "/"
-          },
-          {
-            "text": "Quần Jeans",
-            "link": "/"
-          },
-          {
-            "text": "Quần Short",
-            "link": "/"
-          }
-        ]
-      },
-      {
-        "title": "Phụ Kiện",
-        "list": [
-          {
-            "text": "Đồ Lót",
-            "link": "/"
-          },
-          {
-            "text": "Tất",
-            "link": "/"
-          },
-          {
-            "text": "Dây Lưng",
-            "link": "/"
-          },
-          {
-            "text": "Ví Da",
-            "link": "/"
-          },
-          {
-            "text": "Cà Vạt",
-            "link": "/"
-          }
-        ]
       }
     ],
     "imageSubmenu": "https://ucarecdn.com/15e19682-4f24-4f22-9909-8171881a5799/ao_submenu.jpg",
@@ -104,43 +54,6 @@
     "link": "/",
     "submenu": [
       {
-        "title": "Áo",
-        "list": [
-          {
-            "text": "Sơ Mi Cao Cấp",
-            "link": "/"
-          },
-          {
-            "text": "Áo Jacket",
-            "link": "/"
-          },
-          {
-            "text": "Áo Sơ Mi",
-            "link": "/"
-          },
-          {
-            "text": "Áo Hoodie",
-            "link": "/"
-          },
-          {
-            "text": "Áo Veston",
-            "link": "/"
-          },
-          {
-            "text": "Áo Blazer",
-            "link": "/"
-          },
-          {
-            "text": "Áo Thun",
-            "link": "/"
-          },
-          {
-            "text": "Áo Polo",
-            "link": "/"
-          }
-        ]
-      },
-      {
         "title": "Quần",
         "list": [
           {
@@ -161,31 +74,6 @@
           },
           {
             "text": "Quần Short",
-            "link": "/"
-          }
-        ]
-      },
-      {
-        "title": "Phụ Kiện",
-        "list": [
-          {
-            "text": "Đồ Lót",
-            "link": "/"
-          },
-          {
-            "text": "Tất",
-            "link": "/"
-          },
-          {
-            "text": "Dây Lưng",
-            "link": "/"
-          },
-          {
-            "text": "Ví Da",
-            "link": "/"
-          },
-          {
-            "text": "Cà Vạt",
             "link": "/"
           }
         ]
@@ -198,68 +86,6 @@
     "text": "Phu kiện",
     "link": "/",
     "submenu": [
-      {
-        "title": "Áo",
-        "list": [
-          {
-            "text": "Sơ Mi Cao Cấp",
-            "link": "/"
-          },
-          {
-            "text": "Áo Jacket",
-            "link": "/"
-          },
-          {
-            "text": "Áo Sơ Mi",
-            "link": "/"
-          },
-          {
-            "text": "Áo Hoodie",
-            "link": "/"
-          },
-          {
-            "text": "Áo Veston",
-            "link": "/"
-          },
-          {
-            "text": "Áo Blazer",
-            "link": "/"
-          },
-          {
-            "text": "Áo Thun",
-            "link": "/"
-          },
-          {
-            "text": "Áo Polo",
-            "link": "/"
-          }
-        ]
-      },
-      {
-        "title": "Quần",
-        "list": [
-          {
-            "text": "Quần Tây",
-            "link": "/"
-          },
-          {
-            "text": "Quần Jogger",
-            "link": "/"
-          },
-          {
-            "text": "Quần Khaki",
-            "link": "/"
-          },
-          {
-            "text": "Quần Jeans",
-            "link": "/"
-          },
-          {
-            "text": "Quần Short",
-            "link": "/"
-          }
-        ]
-      },
       {
         "title": "Phụ Kiện",
         "list": [

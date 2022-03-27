@@ -9,6 +9,7 @@ class Menu extends Component {
     super(props);
     this.state = {
       navbar: false,
+      isActiveMobile: false,
     };
   }
 
@@ -23,22 +24,47 @@ class Menu extends Component {
       });
     }
   };
+  handleToggleMobile = () => {
+    this.setState({
+      isActiveMobile: !this.state.isActiveMobile,
+    });
+  };
 
   render() {
     window.addEventListener("scroll", this.changeFixed);
-    const { navbar } = this.state;
+    const { navbar, isActiveMobile } = this.state;
     return (
       <div className={navbar ? "menu fixed" : "menu"}>
         <div className='container menu-wrapper'>
           <div className='menu-left'>
-            <div className='menu-mobile-toggle'>
+            <div
+              className='menu-mobile-toggle'
+              onClick={() => this.handleToggleMobile()}
+            >
               <i className='fa-solid fa-bars'></i>
             </div>
             <div className='logo'>
               <img src={logo} alt='logo' />
             </div>
-
-            <nav className='navbar'>
+            <div
+              className={
+                isActiveMobile ? "menu-overlay active-overlay" : "menu-overlay"
+              }
+              onClick={() => this.setState({ isActiveMobile: false })}
+            ></div>
+            <nav
+              className={
+                isActiveMobile ? "navbar navbar-mobile-active" : "navbar"
+              }
+            >
+              <div
+                className='navbar-mobile-close'
+                onClick={() => this.setState({ isActiveMobile: false })}
+              >
+                <span>
+                  <i className='fa-solid fa-xmark'></i>&nbsp;&nbsp;Đóng
+                </span>
+              </div>
               <ul className='navbar-nav'>
                 {nav &&
                   nav.length > 0 &&
@@ -70,6 +96,14 @@ class Menu extends Component {
                 <i className='fa-solid fa-magnifying-glass'></i>
               </label>
               <input type='text' placeholder='Bạn tìm gì' />
+            </div>
+            <div className='menu-wrap-mobile'>
+              <div className='icon-menu-mobile'>
+                <i className='fa-solid fa-magnifying-glass'></i>
+              </div>
+              <div className='icon-menu-mobile'>
+                <i className='fa-solid fa-cart-shopping'></i>
+              </div>
             </div>
             <div className='menu-wrap-icon'>
               <div className='icon-menu'>

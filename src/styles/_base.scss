@@ -17,6 +17,9 @@ body {
   // font-family: "Montserrat", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+body.hidden-scrolling {
+  overflow-y: hidden;
+}
 
 ul {
   list-style-type: none;

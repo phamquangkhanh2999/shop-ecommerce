@@ -10,7 +10,7 @@ class App extends Component {
         <div
           style={{
             backgroundColor: "#e8ecf1",
-            height: "150vh",
+            height: "200vh",
             position: "relative",
           }}
         >
