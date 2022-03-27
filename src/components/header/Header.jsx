@@ -15,8 +15,15 @@ export default class Header extends Component {
             </p>
           </div>
         </div>
-        <div className='container'>
+        <div className='header-content'>
           <Menu />
+        </div>
+        <div className='header-promotion'>
+          <div className='container'>
+            <h4 className='promotion-title'>
+              NẮNG LÊN PHỐ, CHÀNG LÊN ĐỒ. <u>Mua Ngay</u>
+            </h4>
+          </div>
         </div>
       </div>
     );

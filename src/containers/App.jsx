@@ -7,6 +7,15 @@ class App extends Component {
     return (
       <div className='app'>
         <Home />
+        <div
+          style={{
+            backgroundColor: "#e8ecf1",
+            height: "150vh",
+            position: "relative",
+          }}
+        >
+          Pham quang
+        </div>
       </div>
     );
   }

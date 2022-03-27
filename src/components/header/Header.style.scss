@@ -3,6 +3,9 @@
 .header {
   .header-top {
     border-bottom: 1px solid $bg-gray;
+    @include mobile {
+      display: none;
+    }
     .header-top-hotline {
       .header-phone {
         text-align: left;
@@ -16,6 +19,21 @@
           color: $text-quickly;
           padding-left: 10px;
         }
+      }
+    }
+  }
+
+  .header-content {
+  }
+
+  .header-promotion {
+    background-color: #cfd3cb;
+    .promotion-title {
+      text-align: center;
+      padding: 7px 0 9px;
+      text-transform: uppercase;
+      u {
+        cursor: pointer;
       }
     }
   }
