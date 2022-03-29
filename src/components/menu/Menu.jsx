@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Menu.style.scss";
 import logo from "../../assets/images/logo.png";
 import nav from "../../data/nav";
-import Dropdown from "../header/Dropdown";
+import Dropdown from "./Dropdown";
 
 class Menu extends Component {
   constructor(props) {

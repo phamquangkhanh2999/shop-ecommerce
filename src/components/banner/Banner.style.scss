@@ -1,0 +1,28 @@
+@import "../../styles/common.scss";
+.banner {
+  margin-top: 20px;
+  .banner-wrapper {
+    @include flex(center, space-between);
+    gap: 10px;
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .banner-item {
+      overflow: hidden;
+      flex: 1;
+
+      &:hover .banner-img {
+        transform: scale(1.2);
+      }
+      .banner-img {
+        transition: all 1s ease-in-out;
+        transform: scale(1);
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ class App extends Component {
             backgroundColor: "#e8ecf1",
             height: "200vh",
             position: "relative",
+            marginTop: "50px",
           }}
         >
           Pham quang

@@ -1,0 +1,33 @@
+@import "../../styles/common.scss";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+.slider {
+  background-color: $bg-white;
+  .slider-container {
+    margin-top: 20px;
+
+    @include tablet {
+      padding: 0;
+    }
+    .slick-prev {
+      left: 13px !important;
+      z-index: 2;
+    }
+    .slick-next {
+      right: 21px !important;
+      z-index: 2;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      font-family: "Work Sans", sans-serif;
+      border: 1px solid white;
+      padding: 0px 3px 1.3px;
+      border-radius: 6px;
+    }
+
+    @include tablet {
+      .slick-slide img {
+        width: 100%;
+      }
+    }
+  }
+}
