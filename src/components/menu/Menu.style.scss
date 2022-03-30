@@ -78,23 +78,58 @@
         @include mobile {
           width: 85%;
         }
-        .navbar-mobile-close {
-          display: none;
-
+        .navbar-menu-mobile {
           @include tablet {
-            text-align: center;
-            padding: 17px;
-            display: block;
             box-shadow: 0 0 2px 0 #c3c3c3;
             border-bottom: 1px solid #dbdbdb;
             margin-bottom: 4px;
-            text-transform: capitalize;
-            span {
-              font-size: 1.2rem;
-              font-weight: 500;
+          }
+          @include mobile {
+            @include flex(center, space-around);
+          }
+          .nav-sections {
+            display: none;
+            @include tablet {
+              display: none;
+            }
+            @include mobile {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              .nav-sections-item {
+                padding: 17px;
+                color: $txt-gray;
+                font-size: 1.2rem;
+                font-weight: 500;
+              }
+              .nav-sections-item.nav-sections-active {
+                color: $text-main;
+                background-color: #e8e8e8;
+              }
+            }
+          }
+          .navbar-mobile-close {
+            display: none;
+
+            @include tablet {
+              text-align: center;
+              padding: 17px;
+              display: block;
+
+              text-transform: capitalize;
+              span {
+                font-size: 1.2rem;
+                font-weight: 500;
+
+                @include mobile {
+                  color: $txt-gray;
+                }
+              }
             }
           }
         }
+
         .navbar-nav {
           display: flex;
           gap: 60px;
@@ -102,6 +137,9 @@
           @include tablet {
             gap: 20px;
             flex-direction: column;
+          }
+          @include mobile {
+            gap: 10px;
           }
           .nav-item {
             display: inline-block;
@@ -112,16 +150,6 @@
               opacity: 1;
               visibility: visible;
             }
-            // &:hover .dropdown:after {
-            //   content: "";
-            //   position: absolute;
-            //   background-color: rgba(0, 0, 0, 0.5);
-            //   height: 100%;
-            //   width: 100%;
-            //   visibility: visible;
-            //   opacity: 1;
-            //   transition: all 0.3s ease;
-            // }
 
             &:hover .fixed-dropdown {
               transition: all 0.5s ease;
@@ -154,9 +182,9 @@
                 visibility: visible;
                 transform: translateY(0);
               }
-              // &:hover .dropdown:after {
-              //   content: none;
-              // }
+            }
+            @include mobile {
+              padding: 5px 20px;
             }
             .nav-link {
               text-transform: uppercase;
@@ -171,7 +199,7 @@
               }
 
               @include mobile {
-                font-size: 1.3rem;
+                font-size: 1rem;
               }
 
               &:hover {
@@ -179,6 +207,30 @@
               }
             }
           }
+        }
+        .navbar-user-mobile {
+          display: none;
+          @include tablet {
+            display: none;
+          }
+
+          @include mobile {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+
+            .nav-user-mobile-item {
+              margin: 0 !important;
+              font-size: 1.1rem;
+              line-height: 20px;
+              border-bottom: 1px solid #dadada;
+              padding: 12px 20px;
+              font-weight: 500;
+            }
+          }
+        }
+        .active-user {
+          display: none;
         }
       }
     }
@@ -262,10 +314,13 @@
   opacity: 0;
   visibility: hidden;
   padding-top: 56px;
+  -webkit-box-shadow: 5px 15px 11px 2px #00000052;
+  box-shadow: 5px 15px 11px 2px #00000049;
   z-index: 999;
 
   @include tablet {
     padding: 0 20px 0;
+    box-shadow: none;
     transform: translateY(-100px);
   }
 

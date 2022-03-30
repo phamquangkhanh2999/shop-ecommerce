@@ -10,6 +10,7 @@ class Menu extends Component {
     this.state = {
       navbar: false,
       isActiveMobile: false,
+      isActiveUser: false,
     };
   }
 
@@ -29,10 +30,16 @@ class Menu extends Component {
       isActiveMobile: !this.state.isActiveMobile,
     });
   };
+  handleToggleUser = () => {
+    this.setState({
+      isActiveUser: !this.state.isActiveUser,
+    });
+  };
 
   render() {
     window.addEventListener("scroll", this.changeFixed);
-    const { navbar, isActiveMobile } = this.state;
+    const { navbar, isActiveMobile, isActiveUser } = this.state;
+
     return (
       <div className={navbar ? "menu fixed" : "menu"}>
         <div className='container menu-wrapper'>
@@ -57,15 +64,46 @@ class Menu extends Component {
                 isActiveMobile ? "navbar navbar-mobile-active" : "navbar"
               }
             >
-              <div
-                className='navbar-mobile-close'
-                onClick={() => this.setState({ isActiveMobile: false })}
-              >
-                <span>
-                  <i className='fa-solid fa-xmark'></i>&nbsp;&nbsp;Đóng
-                </span>
+              <div className='navbar-menu-mobile'>
+                <div className='nav-sections'>
+                  <div
+                    onClick={() => this.handleToggleUser()}
+                    className={
+                      isActiveUser === false
+                        ? "nav-sections-item nav-sections-active"
+                        : "nav-sections-item"
+                    }
+                  >
+                    Menu
+                  </div>
+                  <div
+                    onClick={() => this.handleToggleUser()}
+                    className={
+                      isActiveUser
+                        ? "nav-sections-item nav-sections-active"
+                        : "nav-sections-item"
+                    }
+                  >
+                    Tài Khoản
+                  </div>
+                </div>
+                <div
+                  className='navbar-mobile-close'
+                  onClick={() => this.setState({ isActiveMobile: false })}
+                >
+                  <span>
+                    <i className='fa-solid fa-xmark'></i>&nbsp;&nbsp;Đóng
+                  </span>
+                </div>
               </div>
-              <ul className='navbar-nav'>
+
+              <ul
+                className={
+                  isActiveUser === false
+                    ? "navbar-nav"
+                    : "navbar-nav active-user"
+                }
+              >
                 {nav &&
                   nav.length > 0 &&
                   nav.map((item, index) => (
@@ -87,6 +125,19 @@ class Menu extends Component {
                       )}
                     </li>
                   ))}
+              </ul>
+
+              <ul
+                className={
+                  isActiveUser
+                    ? "navbar-user-mobile"
+                    : "navbar-user-mobile active-user"
+                }
+              >
+                <li className='nav-user-mobile-item'>Tài khoản của tôi</li>
+                <li className='nav-user-mobile-item'>Danh sách yêu thích</li>
+                <li className='nav-user-mobile-item'>Đăng Nhập</li>
+                <li className='nav-user-mobile-item'>Tạo tài khoản</li>
               </ul>
             </nav>
           </div>
