@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../../components/header/Header";
 import "./Home.style.scss";
 import CarouselHome from "../../components/slider/Slider";
 import "slick-carousel/slick/slick.css";
@@ -8,7 +7,6 @@ import Banner from "../../components/banner/Banner";
 import { sliderBannerTop, sliderBannerBottom } from "../../data/banner/banner";
 import Product from "../../components/product/Product";
 import BannerHome from "../../components/banner/BannerHome";
-import Footer from "../../components/footer/Footer";
 
 class Home extends Component {
   render() {

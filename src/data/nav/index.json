@@ -6,7 +6,7 @@
   },
   {
     "text": "ÁO",
-    "link": "/",
+    "link": "/catalog",
     "submenu": [
       {
         "title": "Áo",
@@ -51,7 +51,7 @@
   },
   {
     "text": "Quần",
-    "link": "/",
+    "link": "/catalog/quan",
     "submenu": [
       {
         "title": "Quần",

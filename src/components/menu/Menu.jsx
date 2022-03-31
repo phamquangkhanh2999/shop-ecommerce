@@ -3,6 +3,7 @@ import "./Menu.style.scss";
 import logo from "../../assets/images/logo.png";
 import nav from "../../data/nav";
 import Dropdown from "./Dropdown";
+import { Link, NavLink } from "react-router-dom";
 
 class Menu extends Component {
   constructor(props) {
@@ -51,7 +52,9 @@ class Menu extends Component {
               <i className='fa-solid fa-bars'></i>
             </div>
             <div className='logo'>
-              <img src={logo} alt='logo' />
+              <Link to='/'>
+                <img src={logo} alt='logo' />
+              </Link>
             </div>
             <div
               className={
@@ -108,9 +111,10 @@ class Menu extends Component {
                   nav.length > 0 &&
                   nav.map((item, index) => (
                     <li className='nav-item' key={index}>
-                      <a className='nav-link' href='#'>
+                      <NavLink to={item.link} className='nav-link'>
                         <span>{item.text}</span>
-                      </a>
+                      </NavLink>
+
                       {item.submenu && item.imageSubmenu && (
                         <div
                           className={
