@@ -64,6 +64,9 @@ class Product extends Component {
               <div className='product-item'>
                 <div className='product-item-img'>
                   <img src={Product2} alt='' />
+                  <div className='product-item-buynow'>
+                    <span> Mua Ngay</span>
+                  </div>
                 </div>
                 <div className='product-item-details'>
                   <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
@@ -75,6 +78,9 @@ class Product extends Component {
               <div className='product-item'>
                 <div className='product-item-img'>
                   <img src={Product3} alt='' />
+                  <div className='product-item-buynow'>
+                    <span> Mua Ngay</span>
+                  </div>
                 </div>
                 <div className='product-item-details'>
                   <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
@@ -86,6 +92,9 @@ class Product extends Component {
               <div className='product-item'>
                 <div className='product-item-img'>
                   <img src={Product4} alt='' />
+                  <div className='product-item-buynow'>
+                    <span> Mua Ngay</span>
+                  </div>
                 </div>
                 <div className='product-item-details'>
                   <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
