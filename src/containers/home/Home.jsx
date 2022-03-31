@@ -19,18 +19,15 @@ class Home extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      arrows: false,
     };
 
     return (
       <div className='home'>
-        <Header />
         <CarouselHome settings={settings} sliderBanner={sliderBannerTop} />
         <Banner />
         <CarouselHome settings={settings} sliderBanner={sliderBannerBottom} />
         <Product />
         <BannerHome />
-        <Footer />
       </div>
     );
   }
