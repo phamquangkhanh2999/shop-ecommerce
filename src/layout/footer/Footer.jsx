@@ -92,7 +92,8 @@ class Footer extends Component {
 
         <div className='footer-bottom'>
           <p className='footer-copyright container'>
-            <span style={{ color: " #000" }}>© 2022 Phạm Quang Khánh </span>
+            <span style={{ color: " #000" }}>© 2022 Phạm Quang Khánh-</span>
+            quangkhanh2999@gmail.com
           </p>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default class Header extends Component {
             <p className='header-phone'>
               <i className='fa-solid fa-phone'></i>
               Hỗ trợ khách hàng:
-              <strong>123456878</strong>
+              <strong>quangkhanh2999@gmail.com</strong>
             </p>
           </div>
         </div>
