@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Catalog.style.scss";
-import { sideBar } from "../../data/sidebar/sidebar";
 import SidebarCatalog from "../../components/sidebar/SidebarCatalog";
-import image_ao_1 from "../../assets/images/catalog/ao_1.jpg";
-import numberWithCommas from "../../utils/numberWithCommas";
+import ProductCard from "../../components/productCard/ProductCard";
+import productData from "../../data/products/products";
+import Grid from "../../components/grid/Grid";
 
 class Catalog extends Component {
   render() {
-    console.log("🚀 ~ file: Catalog.jsx ~ line 5 ~ sideBar", sideBar[1].lists);
+    const products = productData.getAllProducts();
+
     return (
       <div className='catalog container'>
         {/* start catalog-title */}
@@ -32,88 +33,18 @@ class Catalog extends Component {
                   <i className='fa-solid fa-sliders'></i>
                 </span>
               </div>
-              <div className='product-wrapper'>
-                <div className='product-item'>
-                  <div className='product-item-img'>
-                    <img src={image_ao_1} alt='' />
-                    <div className='product-item-buynow'>
-                      <span> Mua Ngay</span>
-                    </div>
-                  </div>
-                  <div className='product-item-details'>
-                    <div className='product-item-name'>
-                      Áo sơ mi - BA220401NT
-                    </div>
-                    <div className='product-item-price'>
-                      {numberWithCommas(628000)}&nbsp;₫
-                    </div>
-                  </div>
-                </div>
-                <div className='product-item'>
-                  <div className='product-item-img'>
-                    <img src={image_ao_1} alt='' />
-                    <div className='product-item-buynow'>
-                      <span> Mua Ngay</span>
-                    </div>
-                  </div>
-                  <div className='product-item-details'>
-                    <div className='product-item-name'>
-                      Áo sơ mi - BA220401NT
-                    </div>
-                    <div className='product-item-price'>
-                      {numberWithCommas(628000)}&nbsp;₫
-                    </div>
-                  </div>
-                </div>
-                <div className='product-item'>
-                  <div className='product-item-img'>
-                    <img src={image_ao_1} alt='' />
-                    <div className='product-item-buynow'>
-                      <span> Mua Ngay</span>
-                    </div>
-                  </div>
-                  <div className='product-item-details'>
-                    <div className='product-item-name'>
-                      Áo sơ mi - BA220401NT
-                    </div>
-                    <div className='product-item-price'>
-                      {numberWithCommas(628000)}&nbsp;₫
-                    </div>
-                  </div>
-                </div>
-                <div className='product-item'>
-                  <div className='product-item-img'>
-                    <img src={image_ao_1} alt='' />
-                    <div className='product-item-buynow'>
-                      <span> Mua Ngay</span>
-                    </div>
-                  </div>
-                  <div className='product-item-details'>
-                    <div className='product-item-name'>
-                      Áo sơ mi - BA220401NT
-                    </div>
-                    <div className='product-item-price'>
-                      {numberWithCommas(628000)}&nbsp;₫
-                    </div>
-                  </div>
-                </div>
-                <div className='product-item'>
-                  <div className='product-item-img'>
-                    <img src={image_ao_1} alt='' />
-                    <div className='product-item-buynow'>
-                      <span> Mua Ngay</span>
-                    </div>
-                  </div>
-                  <div className='product-item-details'>
-                    <div className='product-item-name'>
-                      Áo sơ mi - BA220401NT
-                    </div>
-                    <div className='product-item-price'>
-                      {numberWithCommas(628000)}&nbsp;₫
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Grid col={4} mdCol={3} smCol={2} gap={20}>
+                {products &&
+                  products.length > 0 &&
+                  products.map((item, index) => (
+                    <ProductCard
+                      key={index}
+                      image={item.image01}
+                      title={item.title}
+                      price={item.price}
+                    />
+                  ))}
+              </Grid>
             </div>
           </div>
         </div>
