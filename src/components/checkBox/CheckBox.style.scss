@@ -1,0 +1,52 @@
+@import "../../styles/common.scss";
+
+.custom-checkbox {
+  @include flex(center, flex-start);
+
+  cursor: pointer;
+
+  &:hover {
+    color: $text-quickly;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkmark {
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid $txt-gray;
+
+    i {
+      transform: scale(0);
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .checkbox-text {
+    font-size: 1.5rem;
+    @include tablet {
+      font-size: 1.3rem;
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  input:checked ~ &__checkmark {
+    background-color: $text-main;
+    border: 1px solid $text-main;
+    color: $bg-white;
+  }
+
+  input:checked ~ &__checkmark > i {
+    transform: scale(1);
+  }
+}

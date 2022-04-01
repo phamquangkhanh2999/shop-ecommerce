@@ -37,23 +37,7 @@
           flex: 1;
         }
       }
-      .menu-overlay {
-        position: fixed;
-        z-index: 900;
-        background-color: rgba(0, 0, 0, 0.5);
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease;
 
-        &.active-overlay {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
       .navbar-mobile-active {
         // left: 0 !important;
         transform: unset !important;

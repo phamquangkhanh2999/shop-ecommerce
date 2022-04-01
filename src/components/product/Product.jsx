@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import "./Product.style.scss";
 import numberWithCommas from "../../utils/numberWithCommas";
 import Slider from "react-slick";
-import Product1 from "../../assets/images/product/product_01.jpg";
-import Product2 from "../../assets/images/product/product_02.jpg";
-import Product3 from "../../assets/images/product/product_03.jpg";
-import Product4 from "../../assets/images/product/product_04.jpg";
+import Grid from "../grid/Grid";
+import ProductCard from "../productCard/ProductCard";
+import productData from "../../data/products/products";
 
 class Product extends Component {
   constructor(props) {
@@ -37,6 +36,7 @@ class Product extends Component {
       autoplay: true,
       arrows: false,
     };
+    const productNews = productData.getAllProductNews();
 
     const { width } = this.state;
     return (
@@ -46,130 +46,40 @@ class Product extends Component {
             <h3>Hàng mới về </h3>
           </div>
           {width && width >= 600 ? (
-            <div className='product-wrapper'>
-              <div className='product-item'>
-                <div className='product-item-img'>
-                  <img src={Product1} alt='' />
-                  <div className='product-item-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-details'>
-                  <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
-                  <div className='product-item-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item'>
-                <div className='product-item-img'>
-                  <img src={Product2} alt='' />
-                  <div className='product-item-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-details'>
-                  <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
-                  <div className='product-item-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item'>
-                <div className='product-item-img'>
-                  <img src={Product3} alt='' />
-                  <div className='product-item-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-details'>
-                  <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
-                  <div className='product-item-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item'>
-                <div className='product-item-img'>
-                  <img src={Product4} alt='' />
-                  <div className='product-item-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-details'>
-                  <div className='product-item-name'>Áo sơ mi - BA220401NT</div>
-                  <div className='product-item-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Grid col={4} md={4} gap={20}>
+              {productNews &&
+                productNews.length > 0 &&
+                productNews.map((item, index) => (
+                  <ProductCard
+                    key={index}
+                    image={item.image01}
+                    title={item.title}
+                    price={item.price}
+                  />
+                ))}
+            </Grid>
           ) : (
             <Slider {...settings}>
-              <div className='product-item-slider'>
-                <div className='product-item-slider-img'>
-                  <img src={Product1} alt='' />
-                  <div className='product-item-slider-buynow'>
-                    <span> Mua Ngay</span>
+              {productNews &&
+                productNews.length > 0 &&
+                productNews.map((item, index) => (
+                  <div className='product-item-slider'>
+                    <div className='product-item-slider-img'>
+                      <img src={item.image01} alt='' />
+                      <div className='product-item-slider-buynow'>
+                        <span> Mua Ngay</span>
+                      </div>
+                    </div>
+                    <div className='product-item-slider-details'>
+                      <div className='product-item-slider-name'>
+                        {item.title}
+                      </div>
+                      <div className='product-item-slider-price'>
+                        {numberWithCommas(item.price)}&nbsp;₫
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className='product-item-slider-details'>
-                  <div className='product-item-slider-name'>
-                    Áo sơ mi - BA220401NT
-                  </div>
-                  <div className='product-item-slider-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item-slider'>
-                <div className='product-item-slider-img'>
-                  <img src={Product1} alt='' />
-                  <div className='product-item-slider-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-slider-details'>
-                  <div className='product-item-slider-name'>
-                    Áo sơ mi - BA220401NT
-                  </div>
-                  <div className='product-item-slider-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item-slider'>
-                <div className='product-item-slider-img'>
-                  <img src={Product1} alt='' />
-                  <div className='product-item-slider-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-slider-details'>
-                  <div className='product-item-slider-name'>
-                    Áo sơ mi - BA220401NT
-                  </div>
-                  <div className='product-item-slider-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
-              <div className='product-item-slider'>
-                <div className='product-item-slider-img'>
-                  <img src={Product1} alt='' />
-                  <div className='product-item-slider-buynow'>
-                    <span> Mua Ngay</span>
-                  </div>
-                </div>
-                <div className='product-item-slider-details'>
-                  <div className='product-item-slider-name'>
-                    Áo sơ mi - BA220401NT
-                  </div>
-                  <div className='product-item-slider-price'>
-                    {numberWithCommas(628000)}&nbsp;₫
-                  </div>
-                </div>
-              </div>
+                ))}
             </Slider>
           )}
         </div>
