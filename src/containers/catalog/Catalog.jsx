@@ -5,6 +5,7 @@ import SidebarCatalog from "../../components/sidebar/SidebarCatalog";
 import ProductCard from "../../components/productCard/ProductCard";
 import productData from "../../data/products/products";
 import Grid from "../../components/grid/Grid";
+import CatalogFilter from "../../components/catalogFilter/CatalogFilter";
 
 class Catalog extends Component {
   render() {
@@ -27,12 +28,7 @@ class Catalog extends Component {
           <div className='catalog-content'>
             <SidebarCatalog />
             <div className='sidebar-main'>
-              <div className='block-filter'>
-                <span className='filter-title'>
-                  Bộ lọc
-                  <i className='fa-solid fa-sliders'></i>
-                </span>
-              </div>
+              <CatalogFilter />
               <Grid col={4} mdCol={3} smCol={2} gap={20}>
                 {products &&
                   products.length > 0 &&

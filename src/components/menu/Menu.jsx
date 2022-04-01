@@ -58,7 +58,7 @@ class Menu extends Component {
             </div>
             <div
               className={
-                isActiveMobile ? "menu-overlay active-overlay" : "menu-overlay"
+                isActiveMobile ? "overlay active-overlay" : "menu-overlay"
               }
               onClick={() => this.setState({ isActiveMobile: false })}
             ></div>

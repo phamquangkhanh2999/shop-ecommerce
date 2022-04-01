@@ -1,0 +1,77 @@
+@import "../../styles/common.scss";
+.block-filter {
+  margin-bottom: 20px;
+  .filter-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      color: $text-quickly;
+    }
+    i {
+      padding-left: 20px;
+    }
+  }
+  // start filter item
+  .filter-wrapper {
+    display: none;
+
+    &.activeFilter {
+      display: block;
+      @include tablet {
+        transform: translateX(0);
+      }
+    }
+    @include tablet {
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 25px;
+      width: 50%;
+      height: 100vh;
+      display: block !important;
+      background-color: $bg-white;
+      overflow-y: auto;
+      box-shadow: 0px 15px 15px #0000002e;
+      transform: translateX(-500px);
+      transition: transform 0.3s ease-in;
+      z-index: 999;
+    }
+    .catalog-filter-close {
+      display: none;
+      @include tablet {
+        display: block;
+        position: absolute;
+        right: 17px;
+        top: 0;
+        font-size: 2rem;
+        border-bottom: 1px solid;
+
+        @include mobile {
+          font-size: 1rem;
+        }
+      }
+    }
+    .catalog-filter-list {
+      @include flex(flex-start, space-around);
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      .catalog-filter-item {
+        .catalog-filter-item-title {
+          @include tablet {
+            font-size: 1.4rem;
+
+            @include mobile {
+              font-size: 1rem;
+            }
+          }
+        }
+        .filter-options {
+        }
+      }
+    }
+  }
+}

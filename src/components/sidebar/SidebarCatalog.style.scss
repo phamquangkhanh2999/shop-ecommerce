@@ -1,5 +1,9 @@
 @import "../../styles/common.scss";
 .sidebar-catalog {
+  width: 20%;
+  @include tablet {
+    width: 35%;
+  }
   @include mobile {
     display: none;
   }
