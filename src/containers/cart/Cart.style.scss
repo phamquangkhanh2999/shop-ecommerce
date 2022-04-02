@@ -20,6 +20,7 @@
   }
 
   .cart-content {
+    padding: 60px 0 60px;
     .cart-row {
       @include flex(flex-start, space-between);
       margin-top: 90px;
