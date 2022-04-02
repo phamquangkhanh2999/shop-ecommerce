@@ -13,7 +13,7 @@
 
     .menu-left {
       @include flex(center, flex-start);
-      gap: 55px;
+      gap: 15px;
       flex: 1;
       @include tablet {
         gap: 20px;

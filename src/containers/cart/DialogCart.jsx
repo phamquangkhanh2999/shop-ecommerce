@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./DialogCart.style.scss";
 import { dataCart } from "../../data/dataCart";
 import numberWithCommas from "../../utils/numberWithCommas";
-import Image from "../../assets/images/product/product_01.jpg";
+import { Link } from "react-router-dom";
 
 class DialogCart extends Component {
   constructor(props) {
@@ -95,7 +95,9 @@ class DialogCart extends Component {
                 </div>
                 <div className='minicart-actions'>
                   <div className='minicart-purchase'>Đặt hàng</div>
-                  <div className='minicart-viewcart'>Xem giỏ hàng</div>
+                  <Link to='/cart'>
+                    <div className='minicart-viewcart'>Xem giỏ hàng</div>
+                  </Link>
                 </div>
               </div>
             </div>

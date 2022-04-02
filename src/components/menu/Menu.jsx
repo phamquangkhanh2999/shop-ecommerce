@@ -4,8 +4,7 @@ import logo from "../../assets/images/logo.png";
 import nav from "../../data/nav";
 import Dropdown from "./Dropdown";
 import { Link, NavLink } from "react-router-dom";
-import CartNull from "../../assets/images/cart/cart.png";
-import DialogCart from "../cart/DialogCart";
+import DialogCart from "../../containers/cart/DialogCart";
 
 class Menu extends Component {
   constructor(props) {
