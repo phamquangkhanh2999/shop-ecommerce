@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.png";
 import nav from "../../data/nav";
 import Dropdown from "./Dropdown";
 import { Link, NavLink } from "react-router-dom";
+import DialogCart from "../../containers/cart/DialogCart";
 
 class Menu extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Menu extends Component {
       navbar: false,
       isActiveMobile: false,
       isActiveUser: false,
+      isActiveDialog: false,
     };
   }
 
@@ -36,10 +38,15 @@ class Menu extends Component {
       isActiveUser: !this.state.isActiveUser,
     });
   };
+  handelDialog = () => {
+    this.setState({
+      isActiveDialog: !this.state.isActiveDialog,
+    });
+  };
 
   render() {
     window.addEventListener("scroll", this.changeFixed);
-    const { navbar, isActiveMobile, isActiveUser } = this.state;
+    const { navbar, isActiveMobile, isActiveUser, isActiveDialog } = this.state;
 
     return (
       <div className={navbar ? "menu fixed" : "menu"}>
@@ -156,7 +163,10 @@ class Menu extends Component {
               <div className='icon-menu-mobile'>
                 <i className='fa-solid fa-magnifying-glass'></i>
               </div>
-              <div className='icon-menu-mobile'>
+              <div
+                className='icon-menu-mobile'
+                onClick={() => this.handelDialog()}
+              >
                 <i className='fa-solid fa-cart-shopping'></i>
               </div>
             </div>
@@ -167,10 +177,11 @@ class Menu extends Component {
               <div className='icon-menu'>
                 <i className='fa-solid fa-user'></i>
               </div>
-              <div className='icon-menu'>
+              <div className='icon-menu' onClick={() => this.handelDialog()}>
                 <i className='fa-solid fa-cart-shopping'></i>
               </div>
             </div>
+            <DialogCart isActiveDialog={isActiveDialog} isNavbar={navbar} />
           </div>
         </div>
 

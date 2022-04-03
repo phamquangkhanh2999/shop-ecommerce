@@ -46,6 +46,7 @@
         top: 0;
         font-size: 2rem;
         border-bottom: 1px solid;
+        cursor: pointer;
 
         @include mobile {
           font-size: 1rem;
