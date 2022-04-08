@@ -4,6 +4,7 @@ import "./Cart.style.scss";
 import { dataCart } from "../../data/dataCart";
 import CartRight from "../../assets/images/cart/cart-banner-right.png";
 import numberWithCommas from "../../utils/numberWithCommas";
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 
 class Cart extends Component {
   constructor(props) {
@@ -13,14 +14,7 @@ class Cart extends Component {
   render() {
     return (
       <div className='cart container'>
-        <div className='cart-title'>
-          <h4 className='cart-title-home'>
-            <Link className='home-back' to='/'>
-              Trang chủ
-            </Link>
-          </h4>
-          <h4 className='cart-title-text'>Giỏ hàng</h4>
-        </div>
+        <Breadcrumbs pathLink={"Giỏ hàng"} />
         <div className='cart-content'>
           {dataCart && dataCart.length > 0 ? (
             <div className='cart-row'>

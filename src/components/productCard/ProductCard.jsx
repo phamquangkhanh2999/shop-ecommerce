@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import numberWithCommas from "../../utils/numberWithCommas";
 import "./ProductCard.style.scss";
 
@@ -9,22 +10,24 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { image, title, price } = this.props;
+    const { image01, title, price, slug } = this.props.product;
 
     return (
       <div className='product-item'>
-        <div className='product-item-img'>
-          <img src={image} alt='' />
-          <div className='product-item-buynow'>
-            <span> Mua Ngay</span>
+        <Link to={`/catalog/${slug}`}>
+          <div className='product-item-img'>
+            <img src={image01} alt='' />
+            <div className='product-item-buynow'>
+              <span> Mua Ngay</span>
+            </div>
           </div>
-        </div>
-        <div className='product-item-details'>
-          <div className='product-item-name'>{title}</div>
-          <div className='product-item-price'>
-            {numberWithCommas(price)}&nbsp;₫
+          <div className='product-item-details'>
+            <div className='product-item-name'>{title}</div>
+            <div className='product-item-price'>
+              {numberWithCommas(price)}&nbsp;₫
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }

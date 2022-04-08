@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./Product.style.scss";
+import "./ProductNew.style.scss";
 import numberWithCommas from "../../utils/numberWithCommas";
 import Slider from "react-slick";
 import Grid from "../grid/Grid";
 import ProductCard from "../productCard/ProductCard";
 import productData from "../../data/products/products";
 
-class Product extends Component {
+class ProductNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,12 +50,7 @@ class Product extends Component {
               {productNews &&
                 productNews.length > 0 &&
                 productNews.map((item, index) => (
-                  <ProductCard
-                    key={index}
-                    image={item.image01}
-                    title={item.title}
-                    price={item.price}
-                  />
+                  <ProductCard key={index} product={item} />
                 ))}
             </Grid>
           ) : (
@@ -88,4 +83,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default ProductNew;

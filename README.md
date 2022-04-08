@@ -48,3 +48,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 Link: cho phép người dùng thay đổi URL
 useNavigate: cho phép người dùng thay đổi URL  
 Dọc tham số trên url : useParams() Lưu ý rằng phân đoạn đường dẫn :invoiceId và khóa của tham params.invoiceIdsố khớp với nhau.
+
+// fix bug useParams : https://stackoverflow.com/questions/62516430/how-can-i-use-param-in-path-as-prop-react-router-dom-v6
+https://stackoverflow.com/questions/64782949/how-to-pass-params-into-link-using-react-router-v6

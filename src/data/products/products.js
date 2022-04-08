@@ -25,7 +25,7 @@ const products = [
     slug: "ao-thun-dinosaur-01",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO T-SHIRT - TSM65209",
@@ -34,10 +34,10 @@ const products = [
     image01: image_ao_2,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-02",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO TSHIRT - TS22352",
@@ -46,10 +46,10 @@ const products = [
     image01: image_ao_3,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-03",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO T-SHIRT - TS22358",
@@ -58,10 +58,10 @@ const products = [
     image01: image_ao_4,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-04",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO T-SHIRT - TS22353",
@@ -70,10 +70,10 @@ const products = [
     image01: image_ao_5,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-05",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO TSHIRT FREESIZE - TS22359",
@@ -82,10 +82,10 @@ const products = [
     image01: image_ao_6,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-06",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO TSHIRT - TS22352",
@@ -94,10 +94,10 @@ const products = [
     image01: image_ao_7,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-07",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO TSHIRT - TS22360 FREESIZE",
@@ -106,10 +106,10 @@ const products = [
     image01: image_ao_8,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-08",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
   {
     title: "ÁO TSHIRT - TS22368",
@@ -118,10 +118,10 @@ const products = [
     image01: image_ao_9,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-09",
     size: ["s", "m", "l", "xl"],
     description:
-      "Chất liệu: 95% cotton- 5% spandex Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính",
+      "<ul> <li>Chất liệu: 95% cotton- 5% spandex</li> <li>Áo phông kiểu dáng Body Fit dễ mặc, ứng dụng cao có thể mặc đi làm, đi học, đi chơi,...</li> <li>Chất liệu mềm mại thoáng mát, Tone màu xám trẻ trung, nam tính</li> </ul>",
   },
 ];
 const productNews = [
@@ -144,7 +144,7 @@ const productNews = [
     image01: image_new_2,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-02",
     size: ["s", "m", "l", "xl"],
     description:
       "Áo sơ mi ngắn tay, form Body Fit dễ mặc, hợp form dáng.Áo sơ mi trẻ trung, hiện đại, dễ phối đồ.Áo sơ mi bạc hà kháng khuẩn tự nhiên, mát lạnh, mềm mượt, thân thiện với làn da.",
@@ -156,7 +156,7 @@ const productNews = [
     image01: image_new_3,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-03",
     size: ["s", "m", "l", "xl"],
     description:
       "Áo sơ mi ngắn tay, form Body Fit dễ mặc, hợp form dáng.Áo sơ mi trẻ trung, hiện đại, dễ phối đồ.Áo sơ mi bạc hà kháng khuẩn tự nhiên, mát lạnh, mềm mượt, thân thiện với làn da.",
@@ -168,7 +168,7 @@ const productNews = [
     image01: image_new_4,
     categorySlug: "ao-thun",
     colors: ["white", "red", "orange"],
-    slug: "ao-thun-dinosaur-01",
+    slug: "ao-thun-dinosaur-04",
     size: ["s", "m", "l", "xl"],
     description:
       "Áo sơ mi ngắn tay, form Body Fit dễ mặc, hợp form dáng.Áo sơ mi trẻ trung, hiện đại, dễ phối đồ.Áo sơ mi bạc hà kháng khuẩn tự nhiên, mát lạnh, mềm mượt, thân thiện với làn da.",
@@ -176,9 +176,18 @@ const productNews = [
 ];
 const getAllProducts = () => products;
 const getAllProductNews = () => productNews;
+const getProducts = (count) => {
+  let max = products.length - count;
+  let min = 0;
+  let start = Math.floor(Math.random() * (max - min) + min);
+  return products.slice(start, start + count);
+};
+const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
 const productData = {
   getAllProducts,
   getAllProductNews,
+  getProducts,
+  getProductBySlug,
 };
 
 export default productData;
