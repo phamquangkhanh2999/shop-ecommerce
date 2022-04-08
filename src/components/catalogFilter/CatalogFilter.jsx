@@ -11,10 +11,6 @@ class CatalogFilter extends Component {
   }
   render() {
     const { isActiveFilter } = this.state;
-    console.log(
-      "🚀 ~ file: CatalogFilter.jsx ~ line 14 ~ CatalogFilter ~ render ~ isActiveFilter",
-      isActiveFilter
-    );
     return (
       <div className='block-filter'>
         <span

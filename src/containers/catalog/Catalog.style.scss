@@ -1,23 +1,7 @@
 @import "../../styles/common.scss";
 .catalog {
   margin-top: 20px;
-  .catalog-title {
-    display: flex;
-    gap: 20px;
-    .catalog-title-home {
-      border-right: 3px solid $text-main;
-      color: $txt-gray;
-      padding-right: 20px;
 
-      &:hover .home-back {
-        color: $text-quickly;
-        text-decoration: revert;
-      }
-    }
-    .catalog-title-text {
-      text-transform: uppercase;
-    }
-  }
   .catalog-wrapper {
     margin-top: 20px;
     .catalog-content {

@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Banner from "../../components/banner/Banner";
 import { sliderBannerTop, sliderBannerBottom } from "../../data/banner/banner";
-import Product from "../../components/product/Product";
 import BannerHome from "../../components/banner/BannerHome";
+import ProductNew from "../../components/productNews/ProductNew";
 
 class Home extends Component {
   render() {
@@ -24,7 +24,7 @@ class Home extends Component {
         <CarouselHome settings={settings} sliderBanner={sliderBannerTop} />
         <Banner />
         <CarouselHome settings={settings} sliderBanner={sliderBannerBottom} />
-        <Product />
+        <ProductNew />
         <BannerHome />
       </div>
     );

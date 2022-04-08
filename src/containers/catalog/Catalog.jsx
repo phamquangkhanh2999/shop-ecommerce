@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Catalog.style.scss";
 import SidebarCatalog from "../../components/sidebar/SidebarCatalog";
 import ProductCard from "../../components/productCard/ProductCard";
 import productData from "../../data/products/products";
 import Grid from "../../components/grid/Grid";
 import CatalogFilter from "../../components/catalogFilter/CatalogFilter";
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 
 class Catalog extends Component {
   render() {
@@ -14,15 +14,7 @@ class Catalog extends Component {
     return (
       <div className='catalog container'>
         {/* start catalog-title */}
-        <div className='catalog-title'>
-          <h4 className='catalog-title-home'>
-            <Link className='home-back' to='/'>
-              Trang chủ
-            </Link>
-          </h4>
-          <h4 className='catalog-title-text'>Áo</h4>
-        </div>
-
+        <Breadcrumbs pathLink='Áo' />
         {/* end catalog-title */}
         <div className='catalog-wrapper'>
           <div className='catalog-content'>
@@ -33,12 +25,7 @@ class Catalog extends Component {
                 {products &&
                   products.length > 0 &&
                   products.map((item, index) => (
-                    <ProductCard
-                      key={index}
-                      image={item.image01}
-                      title={item.title}
-                      price={item.price}
-                    />
+                    <ProductCard key={index} product={item} />
                   ))}
               </Grid>
             </div>
