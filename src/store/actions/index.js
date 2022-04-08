@@ -1,1 +1,1 @@
-const actionType = Object.freeze({});
+export * from "./productActions";
