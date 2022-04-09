@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import "./CartItem.scss";
 import numberWithCommas from "../../utils/numberWithCommas";
-import { dataCart } from "../../data/dataCart";
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
 class CartItem extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const { cartItem } = this.props;
 
@@ -54,7 +57,12 @@ class CartItem extends Component {
                       </div>
                     </div>
                   </td>
-                  <td className='col col-action'>Xóa</td>
+                  <td
+                    className='col col-action'
+                    onClick={() => this.props.removeCart(item.id)}
+                  >
+                    Xóa
+                  </td>
                   <td className='col col-qty'>
                     <div className='col-mobile'>Số lượng</div>
                     <div className='cart-item-qty'>
@@ -85,5 +93,7 @@ class CartItem extends Component {
     );
   }
 }
-
-export default CartItem;
+const mapDispatchToProps = (dispatch) => ({
+  removeCart: (id) => dispatch(actions.removeCart(id)),
+});
+export default connect(null, mapDispatchToProps)(CartItem);

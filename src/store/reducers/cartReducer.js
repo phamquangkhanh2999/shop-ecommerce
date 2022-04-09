@@ -47,7 +47,17 @@ const cartReducer = (state = initialState, action) => {
           cartLists: [...state.cartLists, action.payload],
         };
       }
-
+    case actionTypes.REMOVE_CART_SUCCESS:
+      const id = action.payload;
+      const carts = state.cartLists.filter((item) => item.id !== id);
+      return {
+        ...state,
+        cartLists: carts,
+      };
+    case actionTypes.REMOVE_CART_FAILURE:
+      return {
+        ...state,
+      };
     default:
       return { ...state };
   }

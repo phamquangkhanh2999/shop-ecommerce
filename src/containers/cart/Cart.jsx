@@ -87,7 +87,6 @@ class Cart extends Component {
                   </div>
                   <div className='cart-summary'>
                     <div className='cart-summary-count-content'>
-                      {" "}
                       <div className='cart-summary-total'>
                         <span>TỔNG SẢN PHẨM:</span>
                         <span>

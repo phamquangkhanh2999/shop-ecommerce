@@ -3,6 +3,7 @@ import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import routes from "../routes/routers";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer, Slide } from "react-toastify";
 
 class App extends Component {
   showContentMenus = (routes) => {
@@ -26,6 +27,18 @@ class App extends Component {
         <Header />
         <div className='main'>{this.showContentMenus(routes)}</div>
         <Footer />
+        <ToastContainer
+          position='top-center'
+          autoClose={3000}
+          transition={Slide}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     );
   }

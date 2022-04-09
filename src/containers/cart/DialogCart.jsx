@@ -4,6 +4,7 @@ import numberWithCommas from "../../utils/numberWithCommas";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import productData from "../../data/products/products";
+import * as actions from "../../store/actions";
 
 class DialogCart extends Component {
   constructor(props) {
@@ -83,6 +84,12 @@ class DialogCart extends Component {
                   <div className='minicart-item-info'>
                     <div className='product-image-container'>
                       <img src={item.product.image01} alt='' />
+                      <span
+                        className='delete-cart'
+                        onClick={() => this.props.removeCart(item.id)}
+                      >
+                        &#88;
+                      </span>
                     </div>
                     <div className='minicart-item-details'>
                       <span className='minicart-item-name'>
@@ -148,4 +155,7 @@ class DialogCart extends Component {
 const mapStateToProps = (state) => ({
   cartLists: state.cartReducer.cartLists,
 });
-export default connect(mapStateToProps, null)(DialogCart);
+const mapDispatchToProps = (dispatch) => ({
+  removeCart: (id) => dispatch(actions.removeCart(id)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(DialogCart);

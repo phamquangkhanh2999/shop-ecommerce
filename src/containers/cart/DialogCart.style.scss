@@ -82,10 +82,24 @@
 
         .minicart-item-info {
           display: flex;
+          gap: 20px;
           .product-image-container {
             width: 50px;
+            position: relative;
             img {
               width: 100%;
+            }
+            span.delete-cart {
+              position: absolute;
+              top: -4px;
+              right: -7px;
+              border-radius: 50%;
+              font-size: 0.8rem;
+              background-color: white;
+              width: 17px;
+              border: 1px solid $txt-gray;
+              text-align: center;
+              cursor: pointer;
             }
           }
           .minicart-item-details {

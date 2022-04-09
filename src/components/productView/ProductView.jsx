@@ -5,6 +5,8 @@ import numberWithCommas from "../../utils/numberWithCommas";
 import "./ProductView.style.scss";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
+import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 class ProductView extends Component {
   constructor(props) {
@@ -45,6 +47,7 @@ class ProductView extends Component {
       const { color, size, quantity } = this.state;
       const { slug, price } = this.props.product;
       let newItem = {
+        id: uuidv4(),
         slug: slug,
         color: color,
         size: size,
@@ -52,9 +55,9 @@ class ProductView extends Component {
         quantity: quantity,
       };
       if (this.props.addCartItem(newItem)) {
-        alert("Success");
+        toast.success(`Bạn đã thêm ${this.props.product.title} vào giỏ hàng`);
       } else {
-        alert("Fail");
+        toast.error("Add cart failed");
       }
     }
   };
