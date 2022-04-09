@@ -5,6 +5,7 @@ import nav from "../../data/nav";
 import Dropdown from "./Dropdown";
 import { Link, NavLink } from "react-router-dom";
 import DialogCart from "../../containers/cart/DialogCart";
+import { connect } from "react-redux";
 
 class Menu extends Component {
   constructor(props) {
@@ -178,6 +179,14 @@ class Menu extends Component {
                 <i className='fa-solid fa-user'></i>
               </div>
               <div className='icon-menu' onClick={() => this.handelDialog()}>
+                {this.props.cartLists && this.props.cartLists.length > 0 ? (
+                  <span className='total-cart'>
+                    {this.props.cartLists.length}
+                  </span>
+                ) : (
+                  ""
+                )}
+
                 <i className='fa-solid fa-cart-shopping'></i>
               </div>
             </div>
@@ -191,4 +200,5 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+const mapStateToProps = (state) => ({ cartLists: state.cartReducer.cartLists });
+export default connect(mapStateToProps, null)(Menu);

@@ -118,24 +118,15 @@
             padding-bottom: 20px;
           }
           .minicart-item-qty {
-            @include flex(center, space-between);
-            border: 1px solid $text-main;
-            .decreasing-qty ~ .increase-qty {
-              padding: 0px 5px;
-              cursor: pointer;
-            }
-            .decreasing-qty {
-              border-right: 1px solid $text-main;
-            }
-            .increase-qty {
-              border-left: 1px solid $text-main;
+            .item-qty {
+              padding: 3px 5px 3px;
+              background-color: $bg-gray;
             }
           }
         }
       }
 
       .minicart-order {
-        .minicart-quantity,
         .minicart-subtotal {
           @include flex(center, space-between);
           margin-top: 5px;

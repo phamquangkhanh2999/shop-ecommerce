@@ -3,6 +3,8 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import numberWithCommas from "../../utils/numberWithCommas";
 import "./ProductView.style.scss";
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
 
 class ProductView extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class ProductView extends Component {
       isColorIndex: "",
       color: null,
       size: null,
+      quantity: 1,
     };
   }
   openPreviewImage = () => {
@@ -22,9 +25,44 @@ class ProductView extends Component {
     });
   };
 
+  check = () => {
+    const { color, size } = this.state;
+    if (color === null) {
+      alert("Vui lòng chọn màu sắc!");
+      return false;
+    }
+
+    if (size === null) {
+      alert("Vui lòng chọn kích cỡ!");
+      return false;
+    }
+
+    return true;
+  };
+
+  addCart = () => {
+    if (this.check()) {
+      const { color, size, quantity } = this.state;
+      const { slug, price } = this.props.product;
+      let newItem = {
+        slug: slug,
+        color: color,
+        size: size,
+        price: price,
+        quantity: quantity,
+      };
+      if (this.props.addCartItem(newItem)) {
+        alert("Success");
+      } else {
+        alert("Fail");
+      }
+    }
+  };
+
   render() {
-    const { isOpen, isSizeIndex, isColorIndex, previewImage } = this.state;
+    const { isOpen, isSizeIndex, isColorIndex } = this.state;
     const { product } = this.props;
+
     return (
       <div className='productView'>
         <div className='product-wrapper'>
@@ -122,7 +160,10 @@ class ProductView extends Component {
                   </div>
                 </div>
 
-                <div className='product-box-tocart'>
+                <div
+                  className='product-box-tocart'
+                  onClick={() => this.addCart()}
+                >
                   <span>Thêm vào giỏ hàng</span>
                 </div>
               </div>
@@ -148,5 +189,9 @@ class ProductView extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  addCartItem: (data) => dispatch(actions.addCartItem(data)),
+});
 
-export default ProductView;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductView);

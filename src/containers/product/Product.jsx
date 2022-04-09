@@ -40,7 +40,7 @@ class product extends Component {
     const { product } = this.state;
     const randomProduct = productData.getProducts(4);
     const products = productData.getProductBySlug(this.props.match.params.slug);
-    console.log(product[0]);
+
     return (
       <div className='product container'>
         <Breadcrumbs pathLink={product.title} />

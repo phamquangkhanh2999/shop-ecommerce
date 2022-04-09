@@ -1,15 +1,58 @@
 import React, { Component } from "react";
 import "./DialogCart.style.scss";
-import { dataCart } from "../../data/dataCart";
 import numberWithCommas from "../../utils/numberWithCommas";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import productData from "../../data/products/products";
 
 class DialogCart extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cartProduct: [],
+      totalPrice: 0,
+    };
+  }
+  getCartItemsInfo = (cartItems) => {
+    let res = [];
+    if (cartItems.length > 0) {
+      cartItems.forEach((e) => {
+        let product = productData.getProductBySlug(e.slug);
+        res.push({
+          ...e,
+          product: product,
+        });
+      });
+    }
+    return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+  };
+  componentDidMount() {
+    const res = this.getCartItemsInfo(this.props.cartLists);
+    const price = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity) * Number(item.price),
+      0
+    );
+    this.setState({
+      cartProduct: res,
+      totalPrice: price,
+    });
+  }
+  componentDidUpdate(prevProps) {
+    const res = this.getCartItemsInfo(this.props.cartLists);
+    const price = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity) * Number(item.price),
+      0
+    );
+    if (prevProps.cartLists !== this.props.cartLists) {
+      this.setState({
+        cartProduct: res,
+        totalPrice: price,
+      });
+    }
   }
   render() {
-    const { isActiveDialog, isNavbar } = this.props;
+    const { isActiveDialog, isNavbar, cartLists } = this.props;
+    const { cartProduct, totalPrice } = this.state;
 
     return (
       <div
@@ -20,7 +63,7 @@ class DialogCart extends Component {
         >
           <div className='cart-mobile-title'>
             <strong className='cart-mobile-text'>
-              <span>Giỏ Hàng 0</span>
+              <span>Giỏ Hàng {cartLists.length}</span>
             </strong>
             <span
               className='cart-mobile-close'
@@ -33,22 +76,24 @@ class DialogCart extends Component {
               <i className='fa-solid fa-xmark'></i>&nbsp;&nbsp;Đóng
             </span>
           </div>
-          {dataCart && dataCart.length > 0 ? (
+          {cartProduct && cartProduct.length > 0 ? (
             <div className='minicart-wrapper'>
-              {dataCart.map((item, index) => (
+              {cartProduct.map((item, index) => (
                 <div className='minicart-item' key={index}>
                   <div className='minicart-item-info'>
                     <div className='product-image-container'>
-                      <img src={item.image01} alt='' />
+                      <img src={item.product.image01} alt='' />
                     </div>
                     <div className='minicart-item-details'>
-                      <span className='minicart-item-name'>{item.title}</span>
+                      <span className='minicart-item-name'>
+                        {item.product.title}
+                      </span>
                       <div className='minicart-item-options'>
                         <div className='minicart-item-option'>
                           <span>Màu Sắc:&nbsp;</span>
                           <span
                             className='minicart-color'
-                            style={{ backgroundColor: `${item.colors}` }}
+                            style={{ backgroundColor: `${item.color}` }}
                           ></span>
                         </div>
                         <div className='minicart-item-option'>
@@ -64,33 +109,19 @@ class DialogCart extends Component {
                       <strong> {numberWithCommas(item.price)}&nbsp;₫</strong>
                     </span>
                     <div className='minicart-item-qty'>
-                      <span className='decreasing-qty'>
-                        <i className='fa-solid fa-minus'></i>
-                      </span>
-                      <span className='item-qty'>1</span>
-                      <span className='increase-qty'>
-                        <i className='fa-solid fa-plus'></i>
-                      </span>
+                      <span className='item-qty'>{item.quantity}</span>
                     </div>
                   </div>
                 </div>
               ))}
 
               <div className='minicart-order'>
-                <div className='minicart-quantity'>
-                  <span>
-                    <strong>Tổng số sản phẩm: </strong>
-                  </span>
-                  <span>
-                    <strong>1</strong>
-                  </span>
-                </div>
                 <div className='minicart-subtotal'>
                   <span>
                     <strong>Tạm tính: </strong>
                   </span>
                   <span>
-                    <strong> {numberWithCommas(628000)}&nbsp;₫</strong>
+                    <strong> {numberWithCommas(totalPrice)}&nbsp;₫</strong>
                   </span>
                 </div>
                 <div className='minicart-actions'>
@@ -114,4 +145,7 @@ class DialogCart extends Component {
   }
 }
 
-export default DialogCart;
+const mapStateToProps = (state) => ({
+  cartLists: state.cartReducer.cartLists,
+});
+export default connect(mapStateToProps, null)(DialogCart);
