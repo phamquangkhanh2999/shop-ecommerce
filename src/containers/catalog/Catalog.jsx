@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Catalog.style.scss";
 import SidebarCatalog from "../../components/sidebar/SidebarCatalog";
 import ProductCard from "../../components/productCard/ProductCard";
-import productData from "../../data/products/products";
 import Grid from "../../components/grid/Grid";
 import CatalogFilter from "../../components/catalogFilter/CatalogFilter";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";

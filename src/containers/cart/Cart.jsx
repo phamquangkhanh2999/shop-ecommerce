@@ -74,8 +74,23 @@ class Cart extends Component {
           {cartProduct && cartProduct.length > 0 ? (
             <div className='cart-row'>
               <div className='cart-container'>
-                <CartItem cartItem={cartProduct} />
-
+                <table className='shopping-cart-table'>
+                  <thead>
+                    <tr>
+                      <th className='col col-item'>Sản phẩm</th>
+                      <th className='col col-action'></th>
+                      <th className='col col-qty'>Số lượng</th>
+                      <th className='col col-price'>Giá </th>
+                      <th className='col col-subtotal'>Tổng tiền</th>
+                    </tr>
+                  </thead>
+                  <tbody className='cart-item'>
+                    {cartProduct &&
+                      cartProduct.map((item, index) => (
+                        <CartItem cartItem={item} key={index} />
+                      ))}
+                  </tbody>
+                </table>
                 {/* summary */}
                 <div className='shopping-cart-bottom'>
                   <div className='cart-left'>

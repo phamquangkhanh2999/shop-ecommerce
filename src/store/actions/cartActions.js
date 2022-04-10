@@ -31,3 +31,14 @@ export const removeCart = (id) => (dispatch, getState) => {
     console.log("delete failed error", error);
   }
 };
+
+export const updateCart = (data) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.UPDATE_CART_ITEM,
+    payload: data,
+  });
+  localStorage.setItem(
+    "carts",
+    JSON.stringify(getState().cartReducer.cartLists)
+  );
+};

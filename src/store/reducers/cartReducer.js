@@ -58,6 +58,37 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case actionTypes.UPDATE_CART_ITEM:
+      const newCart = action.payload;
+      const cart = state.cartLists.filter(
+        (e) =>
+          e.slug === newCart.slug &&
+          e.color === newCart.color &&
+          e.size === newCart.size
+      );
+      console.log(cart);
+      if (cart.length > 0) {
+        state.cartLists = state.cartLists.filter(
+          (e) =>
+            e.slug !== newCart.slug ||
+            e.color !== newCart.color ||
+            e.size !== newCart.size
+        );
+        return {
+          ...state,
+          cartLists: [
+            ...state.cartLists,
+            {
+              id: cart[0].id,
+              slug: newCart.slug,
+              color: newCart.color,
+              size: newCart.size,
+              price: newCart.price,
+              quantity: newCart.quantity,
+            },
+          ],
+        };
+      }
     default:
       return { ...state };
   }

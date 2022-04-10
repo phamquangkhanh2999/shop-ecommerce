@@ -29,7 +29,7 @@ class App extends Component {
         <Footer />
         <ToastContainer
           position='top-center'
-          autoClose={3000}
+          autoClose={2000}
           transition={Slide}
           hideProgressBar={false}
           newestOnTop={false}
