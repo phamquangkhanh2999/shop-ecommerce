@@ -12,7 +12,6 @@ class CartItem extends Component {
   updateQuantity = (qty) => {
     const { quantity } = this.props.cartItem;
     if (qty === "+") {
-      console.log("cong");
       this.props.updateCart({ ...this.props.cartItem, quantity: quantity + 1 });
     }
     if (qty === "-") {

@@ -66,7 +66,6 @@ const cartReducer = (state = initialState, action) => {
           e.color === newCart.color &&
           e.size === newCart.size
       );
-      console.log(cart);
       if (cart.length > 0) {
         state.cartLists = state.cartLists.filter(
           (e) =>
