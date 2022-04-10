@@ -190,7 +190,15 @@ class Menu extends Component {
                 <i className='fa-solid fa-cart-shopping'></i>
               </div>
             </div>
-            <DialogCart isActiveDialog={isActiveDialog} isNavbar={navbar} />
+            <DialogCart
+              isActiveDialog={isActiveDialog}
+              changeActive={(e) =>
+                this.setState({
+                  isActiveDialog: e,
+                })
+              }
+              isNavbar={navbar}
+            />
           </div>
         </div>
 

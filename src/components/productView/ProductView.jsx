@@ -45,13 +45,14 @@ class ProductView extends Component {
   addCart = () => {
     if (this.check()) {
       const { color, size, quantity } = this.state;
-      const { slug, price } = this.props.product;
+      const { slug, price, title } = this.props.product;
       let newItem = {
         id: uuidv4(),
         slug: slug,
         color: color,
         size: size,
         price: price,
+        title: title,
         quantity: quantity,
       };
       if (this.props.addCartItem(newItem)) {

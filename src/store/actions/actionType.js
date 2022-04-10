@@ -4,6 +4,7 @@ const actionTypes = Object.freeze({
   REMOVE_CART_SUCCESS: "REMOVE_CART_SUCCESS",
   REMOVE_CART_FAILURE: "REMOVE_CART_FAILURE",
   UPDATE_CART_ITEM: "UPDATE_CART_ITEM",
+  ORDER_PRODUCT: "ORDER_PRODUCT",
 });
 
 export default actionTypes;

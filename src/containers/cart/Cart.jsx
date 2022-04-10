@@ -115,9 +115,11 @@ class Cart extends Component {
                         <span>{numberWithCommas(totalPrice)}&nbsp;₫</span>
                       </div>
                     </div>
-                    <div className='proceed-to-checkout'>
-                      <span>Đặt hàng</span>
-                    </div>
+                    <Link to='/checkout'>
+                      <div className='proceed-to-checkout'>
+                        <span>Đặt hàng</span>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

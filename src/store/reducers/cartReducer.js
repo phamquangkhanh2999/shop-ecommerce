@@ -88,6 +88,7 @@ const cartReducer = (state = initialState, action) => {
           ],
         };
       }
+      break;
     default:
       return { ...state };
   }

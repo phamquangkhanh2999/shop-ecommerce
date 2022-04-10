@@ -51,8 +51,9 @@ class DialogCart extends Component {
       });
     }
   }
+
   render() {
-    const { isActiveDialog, isNavbar, cartLists } = this.props;
+    const { isActiveDialog, isNavbar, changeActive, cartLists } = this.props;
     const { cartProduct, totalPrice } = this.state;
 
     return (
@@ -68,11 +69,7 @@ class DialogCart extends Component {
             </strong>
             <span
               className='cart-mobile-close'
-              onClick={() =>
-                this.setState({
-                  isActiveDialog: false,
-                })
-              }
+              onClick={() => changeActive(false)}
             >
               <i className='fa-solid fa-xmark'></i>&nbsp;&nbsp;Đóng
             </span>
@@ -132,7 +129,10 @@ class DialogCart extends Component {
                   </span>
                 </div>
                 <div className='minicart-actions'>
-                  <div className='minicart-purchase'>Đặt hàng</div>
+                  <Link to='/checkout'>
+                    <div className='minicart-purchase'>Đặt hàng</div>
+                  </Link>
+
                   <Link to='/cart'>
                     <div className='minicart-viewcart'>Xem giỏ hàng</div>
                   </Link>

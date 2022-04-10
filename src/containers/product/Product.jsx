@@ -19,22 +19,6 @@ class product extends Component {
   componentDidMount() {
     this.props.getAllProduct();
   }
-  // getProduct = () => {
-  //   let { slug } = this.props.match.params;
-  //   if (slug) {
-  //     const res = productData.getAllProducts();
-  //     const data = res.filter((item) => {
-  //       return item.slug === slug;
-  //     });
-  //     this.setState({
-  //       product: data,
-  //     });
-  //   }
-  // };
-
-  // componentDidMount() {
-  //   this.getProduct();
-  // }
 
   componentDidUpdate() {
     window.scrollTo(0, 0);
