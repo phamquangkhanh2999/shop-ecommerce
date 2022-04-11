@@ -3,6 +3,8 @@ import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import routes from "../routes/routers";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer, Slide } from "react-toastify";
+import { withRouter } from "../hooks/withRouter";
 
 class App extends Component {
   showContentMenus = (routes) => {
@@ -23,12 +25,31 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
-        <Header />
+        {this.props.location.pathname !== "/checkout" &&
+        this.props.location.pathname !== "/order-complete" ? (
+          <Header />
+        ) : null}
         <div className='main'>{this.showContentMenus(routes)}</div>
-        <Footer />
+        {this.props.location.pathname !== "/checkout" &&
+        this.props.location.pathname !== "/order-complete" ? (
+          <Footer />
+        ) : null}
+
+        <ToastContainer
+          position='top-center'
+          autoClose={2000}
+          transition={Slide}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

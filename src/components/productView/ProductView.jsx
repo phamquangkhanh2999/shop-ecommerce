@@ -3,6 +3,10 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import numberWithCommas from "../../utils/numberWithCommas";
 import "./ProductView.style.scss";
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 class ProductView extends Component {
   constructor(props) {
@@ -14,6 +18,7 @@ class ProductView extends Component {
       isColorIndex: "",
       color: null,
       size: null,
+      quantity: 1,
     };
   }
   openPreviewImage = () => {
@@ -22,9 +27,46 @@ class ProductView extends Component {
     });
   };
 
+  check = () => {
+    const { color, size } = this.state;
+    if (color === null) {
+      alert("Vui lòng chọn màu sắc!");
+      return false;
+    }
+
+    if (size === null) {
+      alert("Vui lòng chọn kích cỡ!");
+      return false;
+    }
+
+    return true;
+  };
+
+  addCart = () => {
+    if (this.check()) {
+      const { color, size, quantity } = this.state;
+      const { slug, price, title } = this.props.product;
+      let newItem = {
+        id: uuidv4(),
+        slug: slug,
+        color: color,
+        size: size,
+        price: price,
+        title: title,
+        quantity: quantity,
+      };
+      if (this.props.addCartItem(newItem)) {
+        toast.success(`Bạn đã thêm ${this.props.product.title} vào giỏ hàng`);
+      } else {
+        toast.error("Add cart failed");
+      }
+    }
+  };
+
   render() {
-    const { isOpen, isSizeIndex, isColorIndex, previewImage } = this.state;
+    const { isOpen, isSizeIndex, isColorIndex } = this.state;
     const { product } = this.props;
+
     return (
       <div className='productView'>
         <div className='product-wrapper'>
@@ -122,7 +164,10 @@ class ProductView extends Component {
                   </div>
                 </div>
 
-                <div className='product-box-tocart'>
+                <div
+                  className='product-box-tocart'
+                  onClick={() => this.addCart()}
+                >
                   <span>Thêm vào giỏ hàng</span>
                 </div>
               </div>
@@ -148,5 +193,9 @@ class ProductView extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  addCartItem: (data) => dispatch(actions.addCartItem(data)),
+});
 
-export default ProductView;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductView);

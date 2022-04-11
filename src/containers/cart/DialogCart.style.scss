@@ -82,10 +82,24 @@
 
         .minicart-item-info {
           display: flex;
+          gap: 20px;
           .product-image-container {
             width: 50px;
+            position: relative;
             img {
               width: 100%;
+            }
+            span.delete-cart {
+              position: absolute;
+              top: -4px;
+              right: -7px;
+              border-radius: 50%;
+              font-size: 0.8rem;
+              background-color: white;
+              width: 17px;
+              border: 1px solid $txt-gray;
+              text-align: center;
+              cursor: pointer;
             }
           }
           .minicart-item-details {
@@ -104,6 +118,7 @@
                 .minicart-color {
                   padding: 1px 9px 1px;
                   border-radius: 50%;
+                  border: 1px solid #ebe6e6;
                 }
               }
             }
@@ -118,24 +133,15 @@
             padding-bottom: 20px;
           }
           .minicart-item-qty {
-            @include flex(center, space-between);
-            border: 1px solid $text-main;
-            .decreasing-qty ~ .increase-qty {
-              padding: 0px 5px;
-              cursor: pointer;
-            }
-            .decreasing-qty {
-              border-right: 1px solid $text-main;
-            }
-            .increase-qty {
-              border-left: 1px solid $text-main;
+            .item-qty {
+              padding: 3px 5px 3px;
+              background-color: $bg-gray;
             }
           }
         }
       }
 
       .minicart-order {
-        .minicart-quantity,
         .minicart-subtotal {
           @include flex(center, space-between);
           margin-top: 5px;

@@ -1,25 +1,79 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Cart.style.scss";
-import { dataCart } from "../../data/dataCart";
+import productData from "../../data/products/products";
 import CartRight from "../../assets/images/cart/cart-banner-right.png";
 import numberWithCommas from "../../utils/numberWithCommas";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
+import CartItem from "../../components/cartItem/CartItem";
+import { connect } from "react-redux";
 
 class Cart extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cartProduct: [],
+      totalPrice: 0,
+      totalProduct: 0,
+    };
   }
+  getCartItemsInfo = (cartItems) => {
+    let res = [];
+    if (cartItems.length > 0) {
+      cartItems.forEach((e) => {
+        let product = productData.getProductBySlug(e.slug);
+        res.push({
+          ...e,
+          product: product,
+        });
+      });
+    }
+    return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+  };
+  componentDidMount() {
+    const res = this.getCartItemsInfo(this.props.cartLists);
+    const price = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity) * Number(item.price),
+      0
+    );
+    const totalPrt = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity),
+      0
+    );
 
+    this.setState({
+      cartProduct: res,
+      totalPrice: price,
+      totalProduct: totalPrt,
+    });
+  }
+  componentDidUpdate(prevProps) {
+    const res = this.getCartItemsInfo(this.props.cartLists);
+    const price = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity) * Number(item.price),
+      0
+    );
+    const totalPrt = this.props.cartLists.reduce(
+      (total, item) => total + Number(item.quantity),
+      0
+    );
+    if (prevProps.cartLists !== this.props.cartLists) {
+      this.setState({
+        cartProduct: res,
+        totalPrice: price,
+        totalProduct: totalPrt,
+      });
+    }
+  }
   render() {
+    const { cartProduct, totalPrice, totalProduct } = this.state;
     return (
       <div className='cart container'>
         <Breadcrumbs pathLink={"Giỏ hàng"} />
         <div className='cart-content'>
-          {dataCart && dataCart.length > 0 ? (
+          {cartProduct && cartProduct.length > 0 ? (
             <div className='cart-row'>
               <div className='cart-container'>
-                {/* start table shop cart */}
                 <table className='shopping-cart-table'>
                   <thead>
                     <tr>
@@ -31,63 +85,12 @@ class Cart extends Component {
                     </tr>
                   </thead>
                   <tbody className='cart-item'>
-                    {dataCart.map((item, index) => (
-                      <tr className='item-info' key={index}>
-                        <td className=' col col-item'>
-                          <div className='cart-item-info'>
-                            <div className='product-image-container'>
-                              <img src={item.image01} alt='' />
-                            </div>
-                            <div className='cart-item-details'>
-                              <span className='cart-item-name'>
-                                {item.title}
-                              </span>
-
-                              <div className='cart-item-options'>
-                                <div className='cart-item-option'>
-                                  <span>Màu Sắc:&nbsp;</span>
-                                  <span
-                                    className='cart-color'
-                                    style={{
-                                      backgroundColor: `${item.colors}`,
-                                    }}
-                                  ></span>
-                                </div>
-                                <div className='cart-item-option'>
-                                  <span className='cart-size'>
-                                    Kích cỡ:&nbsp; {item.size}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className='col col-action'>Xóa</td>
-                        <td className='col col-qty'>
-                          <div className='col-mobile'>Số lượng</div>
-                          <div className='cart-item-qty'>
-                            <span className='cart-decreasing-qty'>
-                              <i className='fa-solid fa-minus'></i>
-                            </span>
-                            <span className='item-qty'>1</span>
-                            <span className='cart-increase-qty'>
-                              <i className='fa-solid fa-plus'></i>
-                            </span>
-                          </div>
-                        </td>
-                        <td className='col col-price'>
-                          <div className='col-mobile'>Giá</div>
-                          <strong>{numberWithCommas(item.price)}&nbsp;₫</strong>
-                        </td>
-                        <td className='col col-subtotal'>
-                          <div className='col-mobile'>Tổng tiền</div>
-                          <strong>{numberWithCommas(item.price)}&nbsp;₫</strong>
-                        </td>
-                      </tr>
-                    ))}
+                    {cartProduct &&
+                      cartProduct.map((item, index) => (
+                        <CartItem cartItem={item} key={index} />
+                      ))}
                   </tbody>
                 </table>
-                {/* end table shop cart */}
                 {/* summary */}
                 <div className='shopping-cart-bottom'>
                   <div className='cart-left'>
@@ -102,17 +105,21 @@ class Cart extends Component {
                       <div className='cart-summary-total'>
                         <span>TỔNG SẢN PHẨM:</span>
                         <span>
-                          <strong>2</strong>
+                          <strong>{totalProduct}</strong>
                         </span>
                       </div>
                       <div className='cart-summary-price'>
-                        <span>TẠM TÍNH</span>
-                        <span> 648.000 ₫</span>
+                        <span className='cart-summary-price-title'>
+                          TẠM TÍNH
+                        </span>
+                        <span>{numberWithCommas(totalPrice)}&nbsp;₫</span>
                       </div>
                     </div>
-                    <div className='proceed-to-checkout'>
-                      <span>Đặt hàng</span>
-                    </div>
+                    <Link to='/checkout'>
+                      <div className='proceed-to-checkout'>
+                        <span>Đặt hàng</span>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -135,5 +142,7 @@ class Cart extends Component {
     );
   }
 }
-
-export default Cart;
+const mapStateToProps = (state) => ({
+  cartLists: state.cartReducer.cartLists,
+});
+export default connect(mapStateToProps, null)(Cart);

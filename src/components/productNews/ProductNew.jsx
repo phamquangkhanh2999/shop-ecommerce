@@ -58,7 +58,7 @@ class ProductNew extends Component {
               {productNews &&
                 productNews.length > 0 &&
                 productNews.map((item, index) => (
-                  <div className='product-item-slider'>
+                  <div className='product-item-slider' key={index}>
                     <div className='product-item-slider-img'>
                       <img src={item.image01} alt='' />
                       <div className='product-item-slider-buynow'>

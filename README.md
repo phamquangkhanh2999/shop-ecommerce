@@ -51,3 +51,6 @@ Dọc tham số trên url : useParams() Lưu ý rằng phân đoạn đường d
 
 // fix bug useParams : https://stackoverflow.com/questions/62516430/how-can-i-use-param-in-path-as-prop-react-router-dom-v6
 https://stackoverflow.com/questions/64782949/how-to-pass-params-into-link-using-react-router-v6
+
+// hide header router
+https://stackoverflow.com/questions/56971917/hide-header-on-some-pages-in-react-router-dom

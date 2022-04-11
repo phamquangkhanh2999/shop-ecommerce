@@ -269,6 +269,19 @@
         .icon-menu {
           font-size: 1.5rem;
           cursor: pointer;
+          position: relative;
+          .total-cart {
+            position: absolute;
+            top: 0px;
+            right: -10px;
+            color: wheat;
+            font-size: 0.7rem;
+            background-color: $text-quickly;
+            border-radius: 50%;
+            width: 15px;
+            text-align: center;
+            font-weight: 500;
+          }
           &:hover {
             color: $text-quickly;
           }

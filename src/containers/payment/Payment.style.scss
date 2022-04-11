@@ -1,0 +1,108 @@
+@import "../../styles/common.scss";
+
+.payment {
+  background: rgb(246, 252, 136);
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(246, 252, 136, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+
+  .payment-wrapper {
+    margin: 0 auto;
+    padding: 20px;
+    width: 40%;
+    .payment-tittle {
+      text-align: center;
+
+      h4 {
+        line-height: 2.3;
+      }
+      .order-result {
+        @include flex(center, center);
+        gap: 20px;
+        .order-number {
+          border-right: 1px solid $text-main;
+          padding-right: 20px;
+        }
+      }
+    }
+
+    .payment-content {
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #fff;
+      -webkit-box-shadow: inset -1px 3px 8px 5px #e3e3e3,
+        2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: inset -1px 3px 8px 5px #e3e3e3, 2px 5px 16px 0px #0b325e,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      h3 {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        line-height: 1.625rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+      .order-lists {
+        .order-row {
+          @include flex(center, space-between);
+          padding: 1rem 0;
+        }
+        .order-header {
+          padding: 0.75rem 0;
+          font-weight: 500;
+        }
+        .order-item {
+          border-bottom: 1px solid rgba(18, 18, 18, 0.1);
+          .order-item__quantity {
+            color: $text-quickly;
+          }
+        }
+        .order-ship-fee {
+          border-bottom: 1px solid rgba(18, 18, 18, 0.1);
+        }
+        .order-expect {
+          border-bottom: 1px solid rgba(18, 18, 18, 0.1);
+        }
+        .order-subtotal {
+          border-bottom: 1px solid rgba(18, 18, 18, 0.1);
+          .col-right {
+            color: $text-quickly;
+          }
+        }
+        .col-left {
+          padding-right: 1.75rem;
+          text-align: left;
+        }
+        .col-right {
+          text-align: right;
+        }
+      }
+      .support-info {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+        .text-info {
+          color: #08b2d4 !important;
+        }
+      }
+      .section__btn {
+        outline: none;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.75rem 1.25rem;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #fff;
+        background-color: $text-main;
+        transition: all 0.2s ease;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
