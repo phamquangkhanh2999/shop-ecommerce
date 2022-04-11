@@ -25,9 +25,15 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
-        {this.props.location.pathname !== "/checkout" ? <Header /> : null}
+        {this.props.location.pathname !== "/checkout" &&
+        this.props.location.pathname !== "/order-complete" ? (
+          <Header />
+        ) : null}
         <div className='main'>{this.showContentMenus(routes)}</div>
-        {this.props.location.pathname !== "/checkout" ? <Footer /> : null}
+        {this.props.location.pathname !== "/checkout" &&
+        this.props.location.pathname !== "/order-complete" ? (
+          <Footer />
+        ) : null}
 
         <ToastContainer
           position='top-center'

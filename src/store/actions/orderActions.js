@@ -5,5 +5,5 @@ export const orderProduct = (data) => (dispatch) => {
     type: actionTypes.ORDER_PRODUCT,
     payload: data,
   });
-  // localStorage.removeItem("carts");
+  localStorage.removeItem("carts");
 };

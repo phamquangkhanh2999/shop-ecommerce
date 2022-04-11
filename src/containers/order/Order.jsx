@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import productData from "../../data/products/products";
 import numberWithCommas from "../../utils/numberWithCommas";
+import { withRouter } from "../../hooks/withRouter";
 
 class Order extends Component {
   constructor(props) {
@@ -50,16 +51,36 @@ class Order extends Component {
   }
   createOrder = (e) => {
     e.preventDefault();
+    let today = new Date(),
+      date =
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear(),
+      Newdate =
+        today.getDate() +
+        6 +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear();
+    let rndInt = Math.floor(Math.random() * 9999) + 1000;
     const order = {
       name: this.state.name,
       email: this.state.email,
       address: this.state.address,
       phone: this.state.phone,
+      code_orders: rndInt,
+      date_day: date,
+      new_date: Newdate,
       transport: this.state.transport,
       discount: this.state.discount,
+      totalPrice: this.state.totalPrice,
       cartItem: this.props.cartLists,
     };
-    console.log("🚀 ~ file: Order.jsx ~ line 31 ~ Order ~ order", order);
+    this.props.orderProduct(order);
+    this.props.navigate("/order-complete");
   };
   render() {
     const { cartProduct, totalPrice } = this.state;
@@ -151,7 +172,7 @@ class Order extends Component {
                   <input
                     type='text'
                     name='discount'
-                    placeholder='Nhập mã giảm giá'
+                    placeholder='Mã giảm giá DC1, DC2'
                     onChange={this.handleInput}
                   />
                 </li>
@@ -256,6 +277,6 @@ const mapStateToProps = (state) => ({
   cartLists: state.cartReducer.cartLists,
 });
 const mapDispatchToProps = (dispatch) => ({
-  removeCart: (id) => dispatch(actions.removeCart(id)),
+  orderProduct: (data) => dispatch(actions.orderProduct(data)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Order));
