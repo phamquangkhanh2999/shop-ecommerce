@@ -6,42 +6,34 @@
   },
   {
     "text": "ÁO",
-    "link": "/catalog",
+    "link": "/ao",
     "submenu": [
       {
         "title": "Áo",
         "list": [
           {
-            "text": "Sơ Mi Cao Cấp",
-            "link": "/"
+            "text": "Sơ Mi Cao Cấp"
           },
           {
-            "text": "Áo Jacket",
-            "link": "/"
+            "text": "Áo Jacket"
           },
           {
-            "text": "Áo Sơ Mi",
-            "link": "/"
+            "text": "Áo Sơ Mi"
           },
           {
-            "text": "Áo Hoodie",
-            "link": "/"
+            "text": "Áo Hoodie"
           },
           {
-            "text": "Áo Veston",
-            "link": "/"
+            "text": "Áo Veston"
           },
           {
-            "text": "Áo Blazer",
-            "link": "/"
+            "text": "Áo Blazer"
           },
           {
-            "text": "Áo Thun",
-            "link": "/"
+            "text": "Áo Thun"
           },
           {
-            "text": "Áo Polo",
-            "link": "/"
+            "text": "Áo Polo"
           }
         ]
       }
@@ -51,30 +43,25 @@
   },
   {
     "text": "Quần",
-    "link": "/catalog/quan",
+    "link": "/quan",
     "submenu": [
       {
         "title": "Quần",
         "list": [
           {
-            "text": "Quần Tây",
-            "link": "/"
+            "text": "Quần Tây"
           },
           {
-            "text": "Quần Jogger",
-            "link": "/"
+            "text": "Quần Jogger"
           },
           {
-            "text": "Quần Khaki",
-            "link": "/"
+            "text": "Quần Khaki"
           },
           {
-            "text": "Quần Jeans",
-            "link": "/"
+            "text": "Quần Jeans"
           },
           {
-            "text": "Quần Short",
-            "link": "/"
+            "text": "Quần Short"
           }
         ]
       }
@@ -84,30 +71,25 @@
   },
   {
     "text": "Phu kiện",
-    "link": "/",
+    "link": "/phu-kien",
     "submenu": [
       {
         "title": "Phụ Kiện",
         "list": [
           {
-            "text": "Đồ Lót",
-            "link": "/"
+            "text": "Đồ Lót"
           },
           {
-            "text": "Tất",
-            "link": "/"
+            "text": "Tất"
           },
           {
-            "text": "Dây Lưng",
-            "link": "/"
+            "text": "Dây Lưng"
           },
           {
-            "text": "Ví Da",
-            "link": "/"
+            "text": "Ví Da"
           },
           {
-            "text": "Cà Vạt",
-            "link": "/"
+            "text": "Cà Vạt"
           }
         ]
       }
@@ -117,12 +99,12 @@
   },
   {
     "text": "Giá tốt",
-    "link": "/",
+    "link": "/gia-tot",
     "mega_menu": false
   },
   {
     "text": "Cửa hàng",
-    "link": "/",
+    "link": "/he-thong-cua-hang",
     "mega_menu": false
   }
 ]

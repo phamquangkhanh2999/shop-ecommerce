@@ -1,5 +1,4 @@
 export const sideBar = [
-  { title: "Giá Tốt", link: "/" },
   {
     title: "Áo",
     link: "/catalog",
@@ -90,7 +89,8 @@ export const sideBar = [
       },
     ],
   },
-  { title: "HÀNG MỚI VỀ", link: "/" },
-  { title: "SẢN PHẨM BÁN CHẠY", link: "/" },
-  { title: "Lựa chọn của bạn", link: "/" },
+  { title: "HÀNG MỚI VỀ" },
+  { title: "SẢN PHẨM BÁN CHẠY" },
+  { title: "Lựa chọn của bạn" },
+  { title: "Giá Tốt" },
 ];

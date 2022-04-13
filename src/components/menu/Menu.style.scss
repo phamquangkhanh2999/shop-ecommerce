@@ -178,7 +178,9 @@
               color: $text-main;
               line-height: 36px;
               position: relative;
-
+              &.active {
+                color: $text-quickly;
+              }
               @include tablet {
                 font-size: 1.7rem;
               }

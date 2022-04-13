@@ -8,6 +8,7 @@ import Grid from "../../components/grid/Grid";
 import ProductCard from "../../components/productCard/ProductCard";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
+import Loading from "../../components/loading/Loading";
 
 class product extends Component {
   constructor(props) {
@@ -32,7 +33,6 @@ class product extends Component {
   };
 
   render() {
-    const { product } = this.state;
     const randomProduct = this.getProducts(4);
 
     const products = productData.getProductBySlug(this.props.match.params.slug);
@@ -41,10 +41,10 @@ class product extends Component {
     return (
       <div className='product container'>
         {!productLists ? (
-          <div>Loading...</div>
+          <Loading />
         ) : (
           <>
-            <Breadcrumbs pathLink={product.title} />
+            <Breadcrumbs pathLink={products.title} />
             <ProductView product={products} />
             <div className='related-product'>
               <h2>CÓ THỂ MUA CÙNG </h2>
