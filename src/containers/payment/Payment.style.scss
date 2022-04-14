@@ -13,6 +13,10 @@
     margin: 0 auto;
     padding: 20px;
     width: 40%;
+
+    @include mobile {
+      width: auto;
+    }
     .payment-tittle {
       text-align: center;
 
