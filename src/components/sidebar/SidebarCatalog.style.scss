@@ -11,6 +11,12 @@
     .navigation-title {
       .category-item {
         margin-bottom: 13px;
+
+        &.activeItem .category-item-title {
+          color: $text-quickly;
+          border-left: 4px solid $text-quickly;
+          padding-left: 7px;
+        }
         .category-item-title {
           text-transform: uppercase;
           font-size: 1.2rem;

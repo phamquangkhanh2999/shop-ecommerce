@@ -3,6 +3,12 @@ import "./SidebarCatalog.style.scss";
 import { sideBar } from "../../data/sidebar/sidebar";
 
 class SidebarCatalog extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeIndex: "",
+    };
+  }
   render() {
     return (
       <div className='sidebar-catalog'>
@@ -11,7 +17,16 @@ class SidebarCatalog extends Component {
             {sideBar &&
               sideBar.length > 0 &&
               sideBar.map((item, index) => (
-                <li className='category-item' key={index}>
+                <li
+                  // className='category-item'
+                  className={
+                    index === +this.state.activeIndex
+                      ? "category-item activeItem"
+                      : "category-item"
+                  }
+                  key={index}
+                  onClick={() => this.setState({ activeIndex: index })}
+                >
                   <span className='category-item-title'>{item.title}</span>
                   <ul className='category-submenu'>
                     {item.lists &&

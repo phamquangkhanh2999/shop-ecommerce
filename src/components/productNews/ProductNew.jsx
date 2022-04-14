@@ -4,7 +4,9 @@ import numberWithCommas from "../../utils/numberWithCommas";
 import Slider from "react-slick";
 import Grid from "../grid/Grid";
 import ProductCard from "../productCard/ProductCard";
-import productData from "../../data/products/products";
+
+import * as actions from "../../store/actions";
+import { connect } from "react-redux";
 
 class ProductNew extends Component {
   constructor(props) {
@@ -25,6 +27,16 @@ class ProductNew extends Component {
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateWindowDimensions);
   }
+  componentDidMount() {
+    this.props.getAllProduct();
+  }
+  getProducts = (count) => {
+    const { productLists } = this.props;
+    let max = productLists.length - count;
+    let min = 0;
+    let start = Math.floor(Math.random() * (max - min) + min);
+    return productLists.slice(start, start + count);
+  };
 
   render() {
     let settings = {
@@ -36,8 +48,12 @@ class ProductNew extends Component {
       autoplay: true,
       arrows: false,
     };
-    const productNews = productData.getAllProductNews();
 
+    const productNews = this.getProducts(4);
+    console.log(
+      "🚀 ~ file: ProductNew.jsx ~ line 49 ~ ProductNew ~ render ~ productNews",
+      productNews
+    );
     const { width } = this.state;
     return (
       <div className='product'>
@@ -82,5 +98,10 @@ class ProductNew extends Component {
     );
   }
 }
-
-export default ProductNew;
+const mapStateToProps = (state) => ({
+  productLists: state.productReducer.productLists,
+});
+const mapDispatchToProps = (dispatch) => ({
+  getAllProduct: () => dispatch(actions.getAllProduct()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ProductNew);

@@ -13,12 +13,12 @@ const routes = [
     element: <Home />,
   },
   {
-    path: "/catalog",
+    path: "/ao",
     exact: false,
     element: <Catalog />,
   },
   {
-    path: "/catalog/:slug",
+    path: "/ao/:slug",
     exact: false,
     element: <Product />,
   },

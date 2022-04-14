@@ -14,7 +14,7 @@ class ProductCard extends Component {
 
     return (
       <div className='product-item'>
-        <Link to={`/catalog/${slug}`}>
+        <Link to={`/ao/${slug}`}>
           <div className='product-item-img'>
             <img src={image01} alt='' />
             <div className='product-item-buynow'>

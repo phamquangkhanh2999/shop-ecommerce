@@ -57,6 +57,12 @@ class ProductView extends Component {
       };
       if (this.props.addCartItem(newItem)) {
         toast.success(`Bạn đã thêm ${this.props.product.title} vào giỏ hàng`);
+        this.setState({
+          color: null,
+          size: null,
+          isSizeIndex: "",
+          isColorIndex: "",
+        });
       } else {
         toast.error("Add cart failed");
       }

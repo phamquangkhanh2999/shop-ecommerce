@@ -21,7 +21,7 @@ const products = [
     productCode: "TS22352",
     image01: image_ao_1,
     categorySlug: "ao-thun",
-    colors: ["white", "red", "orange"],
+    colors: ["yellow"],
     slug: "ao-thun-dinosaur-01",
     size: ["s", "m", "l", "xl"],
     description:
@@ -57,7 +57,7 @@ const products = [
     productCode: "TS22352",
     image01: image_ao_4,
     categorySlug: "ao-thun",
-    colors: ["white", "red", "orange"],
+    colors: ["orange"],
     slug: "ao-thun-dinosaur-04",
     size: ["s", "m", "l", "xl"],
     description:
@@ -69,7 +69,7 @@ const products = [
     productCode: "TS22352",
     image01: image_ao_5,
     categorySlug: "ao-thun",
-    colors: ["white", "red", "orange"],
+    colors: ["white", "orange"],
     slug: "ao-thun-dinosaur-05",
     size: ["s", "m", "l", "xl"],
     description:
@@ -81,7 +81,7 @@ const products = [
     productCode: "TS22352",
     image01: image_ao_6,
     categorySlug: "ao-thun",
-    colors: ["white", "red", "orange"],
+    colors: ["white", "red"],
     slug: "ao-thun-dinosaur-06",
     size: ["s", "m", "l", "xl"],
     description:

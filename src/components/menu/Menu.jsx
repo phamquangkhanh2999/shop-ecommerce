@@ -15,6 +15,8 @@ class Menu extends Component {
       isActiveMobile: false,
       isActiveUser: false,
       isActiveDialog: false,
+      isActiveNavItem: "",
+      active: "",
     };
   }
 
@@ -44,11 +46,14 @@ class Menu extends Component {
       isActiveDialog: !this.state.isActiveDialog,
     });
   };
-
+  _handleClick(menuItem) {
+    this.setState({ active: menuItem });
+    console.log(menuItem);
+  }
   render() {
     window.addEventListener("scroll", this.changeFixed);
     const { navbar, isActiveMobile, isActiveUser, isActiveDialog } = this.state;
-
+    const activeStyle = { color: "#ff3333" };
     return (
       <div className={navbar ? "menu fixed" : "menu"}>
         <div className='container menu-wrapper'>
@@ -118,8 +123,12 @@ class Menu extends Component {
                 {nav &&
                   nav.length > 0 &&
                   nav.map((item, index) => (
-                    <li className='nav-item' key={index}>
-                      <NavLink to={item.link} className='nav-link'>
+                    <li className='nav-item'>
+                      <NavLink
+                        to={item.link}
+                        className='nav-link'
+                        activeClassName='activeNavItem'
+                      >
                         <span>{item.text}</span>
                       </NavLink>
 
